@@ -1,0 +1,12 @@
+<div class="cards">
+  <div *ngFor="let player of nbaPlayers; let i = index" class="card">
+    <span class="name">{{ player.playerName }}</span>
+    <span class="position">{{ player.position }}</span>
+    <div class="information">
+      <span class="age">{{ player.age }}</span>
+      <span class="team">{{ player.team }}</span>
+      <span class="games">{{ player.games }}</span>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

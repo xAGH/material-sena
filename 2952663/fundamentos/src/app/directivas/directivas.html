@@ -1,0 +1,50 @@
+<div class="catalogo">
+  <div *ngFor="let producto of productos; let i = index" class="tarjeta">
+    <span appResaltar class="titulo">{{ i + 1 + '. ' + producto.nombre }}</span>
+
+    <img src="{{ producto.image }}" alt="">
+
+    <p class="descripcion">{{ producto.descripcion }}</p>
+
+    <div class="stockPrecio">
+      <span class="stock-container">
+        <span class="stock">Stock: {{ producto.stock }}</span>
+        <span *ngIf="producto.stock <= 15; else highstock" class="low-stock">Bajo stock</span>
+
+        <ng-template #highstock>
+          <span class="high-stock">Alto stock</span>
+        </ng-template>
+      </span>
+      <span class="precio">Precio: {{ producto.precio }}</span>
+      <div [ngSwitch]="producto.category">
+        <span class="web" *ngSwitchCase="'web'">{{ producto.category }}</span>
+        <span class="movil" *ngSwitchCase="'movil'">{{ producto.category }}</span>
+        <span class="escritorio" *ngSwitchCase="'escritorio'">{{ producto.category }}</span>
+      </div>
+    </div>
+    <button (click)="eliminar(i)" >Eliminar</button>
+  </div>
+
+  <button (click)="agregar()">Agregar</button>
+
+  <!-- Nueva forma desde Angular 17 -->
+
+  <!--
+  @for (producto of productos; track $index) {
+    <div class="tarjeta">
+      <span class="titulo">{{ producto.nombre }}</span>
+
+      <p class="descripcion">{{ producto.descripcion }}</p>
+
+      <div class="stockPrecio">
+        <span class="stock">Stock: {{ producto.stock }}</span>
+        <span class="precio">Precio: {{ producto.precio }}</span>
+      </div>
+    </div>
+  } -->
+
+  <!-- @if (producto.stock <= 15) { <span class="low-stock">Bajo stock</span>
+    } @else {
+    <span class="high-stock">Alto stock</span>
+    } -->
+</div>

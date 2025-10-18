@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tarjeta con Flexbox</title>
+        <style>
+            /* Fondo y centrado general */
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: #f3f4f6;
+                font-family: "Segoe UI", sans-serif;
+            }
+
+            /* Contenedor principal de la tarjeta */
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 300px;
+                background-color: white;
+                border-radius: 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s ease;
+            }
+
+            .card:hover {
+                transform: scale(1.03);
+            }
+
+            /* Imagen superior */
+            .card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+            /* Contenido de texto */
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                padding: 16px;
+                text-align: center;
+            }
+
+            .card-content h2 {
+                font-size: 1.2rem;
+                color: #333;
+            }
+
+            .card-content p {
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+            /* Botón inferior */
+            .card button {
+                background-color: #2563eb;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                margin-bottom: 16px;
+                cursor: pointer;
+                transition: background 0.2s ease;
+            }
+
+            .card button:hover {
+                background-color: #1e40af;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <img src="https://placehold.co/300" alt="Imagen de ejemplo" />
+            <div class="card-content">
+                <h2>Título de la Tarjeta</h2>
+                <p>
+                    Esta es una descripción breve de la tarjeta. Aquí puedes
+                    practicar Flexbox y estilos modernos.
+                </p>
+            </div>
+            <button>Ver más</button>
+        </div>
+    </body>
+</html>

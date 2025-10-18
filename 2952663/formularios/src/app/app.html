@@ -1,0 +1,93 @@
+<form [formGroup]="form" class="bg-gray-500/20 p-6 flex flex-col gap-4 rounded">
+  <span class="text-center font-semibold">Register Form</span>
+  <div class="flex flex-col gap-2">
+    <label for="email">Email:</label>
+    <input
+      formControlName="email"
+      class="bg-white/70 rounded p-1"
+      type="email"
+      name="email"
+      id="email"
+    />
+    <span *ngIf="isInvalid('email', 'required')" class="text-xs text-red-600"
+      >El campo es inválido
+    </span>
+    <span *ngIf="isInvalid('email', 'email')" class="text-xs text-red-600"
+      >El email ingresado es requerido
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label for="name">Name:</label>
+    <input
+      formControlName="name"
+      class="bg-white/70 rounded p-1"
+      type="text"
+      name="name"
+      id="name"
+    />
+    <span *ngIf="isInvalid('name', 'required')" class="text-xs text-red-600"
+      >El campo es requerido
+    </span>
+    <span *ngIf="isInvalid('name', 'pattern')" class="text-xs text-red-600"
+      >El nombre debe ser solo letras
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label for="password">Password:</label>
+    <input
+      formControlName="password"
+      class="bg-white/70 rounded p-1"
+      type="password"
+      name="password"
+      id="password"
+    />
+    <span *ngIf="isInvalid('password', 'required')" class="text-xs text-red-600"
+      >El campo es requerido
+    </span>
+    <span *ngIf="isInvalid('password', 'minlength')" class="text-xs text-red-600"
+      >La contraseña debe de tener mínimo 8 caracteres
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label for="age">Age:</label>
+    <input
+      formControlName="age"
+      class="bg-white/70 rounded p-1"
+      type="number"
+      name="age"
+      id="age"
+    />
+    <span *ngIf="isInvalid('age', 'required')" class="text-xs text-red-600"
+      >El campo es requerido
+    </span>
+    <span *ngIf="isInvalid('age', 'min') || isInvalid('age', 'max')" class="text-xs text-red-600"
+      >La edad debe de estar entre 0 y 110
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label for="document">Document:</label>
+    <input
+      formControlName="document"
+      class="bg-white/70 rounded p-1"
+      type="text"
+      name="document"
+      id="document"
+    />
+    <span *ngIf="isInvalid('document', 'required')" class="text-xs text-red-600"
+      >El campo es requerido
+    </span>
+    <span
+      *ngIf="isInvalid('document', 'minlength') || isInvalid('document', 'maxlength')"
+      class="text-xs text-red-600"
+      >El número de documento debe de estar entre 6 y 15
+    </span>
+  </div>
+  <button
+    [disabled]="form.invalid"
+    (click)="register()"
+    class="py-1 px-2 rounded block pointer"
+    [ngClass]="form.valid ? 'bg-green-300' : 'bg-green-300/20'"
+  >
+    Register
+  </button>
+</form>
