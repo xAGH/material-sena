@@ -1,0 +1,13 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    padding: 30px;
+    border: solid black 10px;
+}

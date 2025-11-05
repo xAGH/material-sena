@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+div {
+    height: 200px !important;
+    width: 200px !important;
+    background-color: red;
+}
+
+#azul {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+.circulo {
+    border-radius: 50%;
+}
+
+.mas-grande {
+    width: 200px;
+    height: 200px;
+}
+
+.gray {
+    background-color: gray;
+}

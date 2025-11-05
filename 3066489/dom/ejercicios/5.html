@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+            main {
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+            }
+
+            .circle {
+                border-radius: 50%;
+                height: 200px;
+                width: 200px;
+                margin: auto;
+                background-color: yellow;
+                position: absolute;
+            }
+            .info {
+                position: absolute;
+                right: 16px;
+                top: 16px;
+                font-size: 36px;
+                display: flex;
+                gap: 40px;
+                user-select: none;
+            }
+        </style>
+        <main>
+            <div class="info">
+                <span id="score">Score: 0</span>
+                <span id="time">Time: 30</span>
+            </div>
+            <div onclick="onClick()" class="circle" id="circle"></div>
+        </main>
+        <script>
+            let score = 0;
+            let time = 10;
+
+            function onClick() {
+                if (score === 0) {
+                    const timeElement = document.getElementById("time");
+                    setInterval(() => {
+                        const newTime = time--;
+                        timeElement.textContent = "Time: " + newTime;
+                        if (newTime === 0) {
+                            alert("Acabó el juego, tu puntuación es: " + score);
+                            location.reload();
+                        }
+                    }, 1000);
+
+                    setInterval(() => {
+                        const circle = document.getElementById("circle");
+                        let nuevoX = Math.random() * window.innerWidth;
+                        let nuevoY = Math.random() * window.innerHeight;
+
+                        if (nuevoX >= 2680) {
+                            nuevoX = nuevoX - 200;
+                        }
+
+                        if (nuevoY >= 1190) {
+                            nuevoY = nuevoY - 200;
+                        }
+
+                        circle.style.left = nuevoX + "px";
+                        circle.style.top = nuevoY + "px";
+                    }, 500);
+                }
+                score += 1;
+                const scoreElement = document.getElementById("score");
+                scoreElement.textContent = "Score: " + score;
+            }
+        </script>
+    </body>
+</html>

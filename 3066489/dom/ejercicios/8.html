@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .calculator {
+                border: 1px solid black;
+                border-radius: 20px;
+                padding: 16px;
+                display: grid;
+                grid-template-columns: repeat(4, 100px);
+                grid-template-rows: repeat(4, 100px);
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                justify-items: center;
+                background-color: #ffc57d;
+            }
+
+            span {
+                font-size: 24px;
+                cursor: pointer;
+                padding: 16px;
+                border-radius: 24px;
+                background-color: aliceblue;
+            }
+        </style>
+        <main>
+            <article class="calculator">
+                <span onclick="input(1)" id="1">1</span>
+                <span onclick="input(2)" id="2">2</span>
+                <span onclick="input(3)" id="3">3</span>
+                <span onclick="input(4)" id="4">4</span>
+                <span onclick="input(5)" id="5">5</span>
+                <span onclick="input(6)" id="6">6</span>
+                <span onclick="input(7)" id="7">7</span>
+                <span onclick="input(8)" id="8">8</span>
+                <span onclick="input(9)" id="9">9</span>
+                <span onclick="input(0)" id="0">0</span>
+                <span onclick="input('+')" id="+">+</span>
+                <span onclick="input('-')" id="-">-</span>
+                <span onclick="input('x')" id="x">x</span>
+                <span onclick="input('/')" id="/">/</span>
+                <span onclick="clearInput('C')" id="C">C</span>
+                <span onclick="operate()" id="=">=</span>
+            </article>
+            <span id="input">Operación: </span>
+            <span id="result">Resultado: </span>
+
+
+            <input onchange="validarEmail()" type="text">
+        </main>
+        <script>
+            let inputs = "";
+
+            function refreshInput() {
+                const input = document.getElementById("input");
+                input.textContent = "Operación: " + inputs;
+            }
+
+            function input(numberOrOperation) {
+                if ("+-x/".includes(numberOrOperation)) {
+                    inputs += " " + numberOrOperation + " ";
+                } else {
+                    inputs += numberOrOperation;
+                }
+                refreshInput();
+            }
+
+            function clearInput() {
+                inputs = "";
+                refreshInput();
+            }
+
+            function operate() {
+                const resultText = document.getElementById("result");
+                const sanitize = inputs.replace("x", "*");
+                const result = eval(sanitize);
+                resultText.textContent = "Resultado: " + result;
+                clearInput();
+            }
+        </script>
+    </body>
+</html>

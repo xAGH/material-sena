@@ -1,0 +1,22 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.contenedor {
+    width: 100vw;
+    height: 100dvh;
+    background-color: aliceblue;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
