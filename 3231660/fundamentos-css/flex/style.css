@@ -1,0 +1,40 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(117, 117, 117);
+    width: 500px;
+    height: 500px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.child {
+    background-color: purple;
+    width: 100px;
+    height: 100px;
+}
+
+.purple {
+    background-color: purple;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
