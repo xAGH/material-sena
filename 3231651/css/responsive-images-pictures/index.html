@@ -7,6 +7,27 @@
         <title>Document</title>
     </head>
     <body>
-        <picture> </picture>
+        <picture>
+            <!-- Para pantallas grandes: imagen de alta resolución -->
+            <source
+                alt="Paisaje hermoso"
+                srcset="https://placehold.co/500"
+                media="(min-width: 900px)"
+            />
+
+            <!-- Para tablets -->
+            <source
+                alt="Paisaje hermoso"
+                srcset="https://placehold.co/300"
+                media="(min-width: 600px)"
+            />
+
+            <!-- Para móviles (imagen pequeña) -->
+            <img
+                src="https://placehold.co/100"
+                alt="Paisaje hermoso"
+                style="width: 100%"
+            />
+        </picture>
     </body>
 </html>
