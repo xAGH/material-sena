@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: beige(193, 193, 70);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenedor {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    padding: 35px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: rgb(20, 20, 20);
+}
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.tarjeta {
+    background-color: rgb(220, 243, 244);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    margin: 5px 0;
+    color: #003366;
+}
+.img {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/20060128DalmenyOtto_002.jpg/1200px-20060128DalmenyOtto_002.jpg);
+    width: 100px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    background-color: #dbe8ff;
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin: 30px;
+}

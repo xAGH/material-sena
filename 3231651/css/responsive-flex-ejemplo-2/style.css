@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor-flex {
+    display: flex;
+    flex-wrap: wrap; /* Permite saltar a nueva línea */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 300px; /* Crece, pero no menos de 300px */
+    max-width: 400px;
+}
+
+/* En móviles: una columna */
+@media (max-width: 768px) {
+    .contenedor-flex {
+        flex-direction: column; /* Apila verticalmente */
+    }
+
+    .tarjeta {
+        flex: 1 1 auto; /* Ocupa todo el ancho */
+    }
+}
