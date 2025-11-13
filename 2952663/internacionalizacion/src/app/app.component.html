@@ -1,0 +1,14 @@
+<span translate>TITLE</span>
+<span>{{ "TITLE" | translate }}</span>
+<br />
+<span>{{ "GREETING" | translate : { name: "Alejo" } }}</span>
+<br />
+<br />
+
+<select (change)="onChangeLang($event)">
+  <option value="en">🇬🇧 English</option>
+  <option value="es">🇪🇸 Español</option>
+  <option value="fr">🇫🇷 Français</option>
+  <option value="it">🇮🇹 Italiano</option>
+</select>
+<!--  -->

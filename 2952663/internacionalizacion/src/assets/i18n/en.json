@@ -1,0 +1,5 @@
+{
+  "TITLE": "Welcome to my Angular App",
+  "GREETING": "Hello, {{name}}!",
+  "BUTTON": "Change Language"
+}
