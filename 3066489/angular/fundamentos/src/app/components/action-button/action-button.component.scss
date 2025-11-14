@@ -1,0 +1,9 @@
+button {
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+}

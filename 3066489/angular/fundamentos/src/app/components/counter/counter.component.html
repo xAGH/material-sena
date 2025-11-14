@@ -1,0 +1,20 @@
+<main class="container">
+    <div class="card">
+        <app-action-button
+            content="-"
+            color="rgb(255, 123, 123)"
+            (buttonClick)="decrement()"
+        ></app-action-button>
+        <span>{{ counter }}</span>
+        <app-action-button
+            content="+"
+            color="rgb(154, 255, 154)"
+            (buttonClick)="increment()"
+        ></app-action-button>
+    </div>
+    <app-action-button
+        content="C"
+        color="rgb(255, 255, 121)"
+        (buttonClick)="reset()"
+    ></app-action-button>
+</main>
