@@ -1,0 +1,47 @@
+.tarjeta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img info";
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    grid-area: info;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info h3 {
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+}
+
+.info p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.info button {
+    align-self: flex-start;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
