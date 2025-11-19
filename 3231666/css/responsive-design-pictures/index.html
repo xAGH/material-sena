@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Pictures</title>
+    </head>
+    <body>
+        <picture>
+            <source
+                srcset="https://placehold.co/900"
+                media="(min-width: 900px)"
+            />
+            <source
+                srcset="https://placehold.co/600"
+                media="(min-width: 600px)"
+            />
+            <source
+                srcset="https://placehold.co/300"
+                media="(min-width: 300px)"
+            />
+
+            <img
+                src="imagen-pequena.jpg"
+                alt="Paisaje hermoso"
+                style="width: 100%"
+            />
+        </picture>
+    </body>
+</html>
