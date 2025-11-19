@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+li:nth-child(odd) {
+  background: #8c8c8c;
+}
+
+li:nth-child(even) {
+  background: #4b4b4b;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  border-bottom: 2px solid #3498db;
+}

@@ -1,0 +1,46 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.greeting {
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+.greeting::first-letter {
+    font-size: 3rem;
+    color: red;
+}
+
+.greeting::before {
+    content: "¡";
+}
+
+.greeting::after {
+    content: "!";
+}
+
+.lorem::first-line {
+    color:red
+}
+
+.lorem::first-letter {
+    font-size: 2rem;
+}
+
+/* Modifica los estilos cuando seleccionamos texto */
+.lorem::selection {
+    background-color: yellowgreen;
+    color: blue;
+}

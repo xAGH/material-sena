@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.enlace {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.enlace::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #c71100;
+}
+
+.cita::before { content: "“"; font-size: 3rem; color: #ccc; }
+
+.cita::after  { content: "”"; font-size: 3rem; color: #ccc; }
