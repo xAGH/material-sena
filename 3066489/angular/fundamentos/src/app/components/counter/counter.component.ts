@@ -13,7 +13,8 @@ export class CounterComponent {
         this.counter += 1;
     }
 
-    decrement() {
+    decrement(evento: string) {
+        console.log(evento)
         this.counter -= 1;
     }
 

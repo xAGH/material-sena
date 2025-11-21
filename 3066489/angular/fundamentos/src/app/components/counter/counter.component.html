@@ -3,7 +3,7 @@
         <app-action-button
             content="-"
             color="rgb(255, 123, 123)"
-            (buttonClick)="decrement()"
+            (buttonClick)="decrement($event)"
         ></app-action-button>
         <span>{{ counter }}</span>
         <app-action-button

@@ -1,5 +1,22 @@
 <div>Hola Mundo</div>
 
-<app-counter></app-counter>
+<app-input></app-input>
+
+<div class="container">
+    <app-product-card
+        *ngFor="let product of products"
+        [product]="product"
+    ></app-product-card>
+</div>
+
 <br />
-<app-counter></app-counter>
+<br />
+<br />
+<br />
+
+<p *ngIf="logued" class="greeting">Hola {{ nombre }}</p>
+
+<div *ngFor="let i of veces">
+    <app-counter></app-counter>
+    <br />
+</div>

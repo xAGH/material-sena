@@ -10,10 +10,10 @@ export class ActionButtonComponent {
     @Input() content: string = ""
     @Input() color: string = ""
 
-    @Output() buttonClick: EventEmitter<void> = new EventEmitter();
+    @Output() buttonClick: EventEmitter<string> = new EventEmitter<string>();
 
     onClick() {
-        this.buttonClick.emit()
+        this.buttonClick.emit("Evento de pulsar el botón accionado")
     }
 
 }
