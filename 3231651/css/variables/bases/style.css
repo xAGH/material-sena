@@ -1,0 +1,63 @@
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+:root {
+    --color-fondo: pink;
+    --display: flex;
+    --columns: repeat(10, 1fr);
+    --anmimacion: blink 10s linear 0s infinite;
+    --color-fondo-oscuro: rgb(98, 0, 0);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: var(--color-fondo-oscuro, #ff0000);
+}
+
+.card {
+    background-color: gray;
+    padding: 1rem;
+    width: 100px;
+    height: 100px;
+}
+
+.content {
+    color: var(--color-fondo);
+}
+
+.example1,
+.example2,
+.example3 {
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+}
+
+.example1 {
+    animation: var(--anmimacion);
+}
+
+.example2 {
+    animation: var(--anmimacion);
+}
+
+.example3 {
+    animation: var(--anmimacion);
+}

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: white;
+    background: #3498db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.elevacion:hover {
+    transform: translateY(-6px);
+}
+
+.escala:hover {
+    transform: scale(1.1);
+}
+
+.rotar:hover {
+    transform: rotate(6deg) scale(1.05);
+}
+
+.combo:hover {
+    transform: translateY(-5px) scale(1.05) rotate(3deg);
+    background: #e74c3c;
+}

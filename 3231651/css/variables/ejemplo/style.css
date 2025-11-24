@@ -1,0 +1,27 @@
+/* Tema claro (por defecto) */
+:root {
+    --fondo: #ffffff;
+    --texto: #2c3e50;
+    --acento: #3498db;
+}
+
+/* Tema oscuro */
+.modo-oscuro {
+    --fondo: #1a1a1a;
+    --texto: #f0f0f0;
+    --acento: #5dade2;
+}
+
+/* Uso global */
+body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: var(--fuente-principal, sans-serif);
+    padding: var(--espaciado-base);
+}
+
+.btn {
+    background: var(--acento);
+    padding: calc(var(--espaciado-base) * 1.5);
+    border-radius: var(--radio-bordes);
+}
