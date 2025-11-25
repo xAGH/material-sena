@@ -1,0 +1,23 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border: black solid 2px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}

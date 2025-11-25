@@ -1,0 +1,70 @@
+html {
+    font-size: 20px;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: red;
+}
+
+.card {
+    font-size: 30px;
+    font-size: 1em;
+    font-size: 1rem;
+}
+
+.card,
+.card2 {
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+}
+
+@media (min-width: 500px) and (min-height: 600px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media (min-width: 1000px), (min-height: 900px) {
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media not (min-width: 500px) {
+    .card2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen {
+    .card2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media print {
+    .card2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media speech {
+    .card2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 100px) {
+}

@@ -1,0 +1,62 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    background-color: lightblue;
+    color: #383838;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #383838;
+    color: lightblue;
+}
+
+.btn:active {
+    transform: scale(0.9);
+    box-shadow: 8px 8px 3px #383838;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: gray;
+}
+
+tbody tr:nth-child(even) {
+    background-color: red;
+}
+
+tbody tr:nth-child(4) {
+    background-color: blue;
+}
+
+tbody tr:first-child {
+    background-color: brown;
+}
+
+tbody tr:last-child {
+    background-color: yellow;
+}
+
+input:not([type="checkbox"]) {
+    background-color: red;
+}
+
+input:checked + label {
+    color: green;
+}
