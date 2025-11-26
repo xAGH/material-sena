@@ -1,0 +1,29 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.enlace {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.enlace::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #27ae60;
+}
+
+.cita::before {
+    content: "“";
+    font-size: 3rem;
+    color: #ccc;
+}
+.cita::after {
+    content: "”";
+    font-size: 3rem;
+    color: #ccc;
+}

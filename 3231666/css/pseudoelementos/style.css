@@ -1,0 +1,51 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lorem::before {
+    content: "";
+    position: absolute;
+    width: 6rem;
+    height: 1rem;
+    background-color: red;
+}
+
+.lorem:hover::before {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 6rem;
+    height: 1rem;
+}
+
+.lorem::after {
+    content: "";
+    position: absolute;
+    width: 6rem;
+    height: 1rem;
+    background-color: red;
+}
+
+.lorem::first-line {
+    font-size: 1.5rem;
+}
+
+.lorem::first-letter {
+    font-size: 2rem;
+}
+
+.lorem::selection {
+    background-color: yellow;
+    color: red;
+}

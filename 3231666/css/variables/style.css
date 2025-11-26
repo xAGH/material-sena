@@ -1,0 +1,48 @@
+@keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+:root {
+    --negro: #000;
+    --flex: flex;
+    --load: load 1s infinite;
+    --blue: blue;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--negro);
+    border-radius: 50%;
+    border-top: 10px solid white;
+    animation: var(--load);
+}
+
+.loader2 {
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--blue, yellow);
+    border-radius: 50%;
+    border-top: 10px solid white;
+    animation: var(--load) reverse;
+}
