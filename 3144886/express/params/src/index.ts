@@ -93,7 +93,18 @@ let products: Product[] = [
 app.use(express.json());
 
 app.get("/product", (req: Request, res: Response) => {
-    res.status(200).json(products)
+    const { 
+        id, name, price, category
+     } = req.query;
+    const filtered = products.filter(el => {
+        const idFilter = id === undefined || el.id === parseInt(String(id));
+        const nameFilter = name === undefined || el.name === String(name);
+        const priceFilter = price === undefined || el.price === parseInt(String(price));
+        const categoryFilter = category === undefined || el.category === String(category);
+
+        return idFilter && nameFilter && priceFilter && categoryFilter
+    })
+    res.status(200).json(filtered)
 })
 
 app.get("/product/:id", (req: Request, res: Response) => {
