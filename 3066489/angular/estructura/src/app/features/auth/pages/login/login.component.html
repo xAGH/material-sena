@@ -1,0 +1,22 @@
+<main class="container">
+    <div class="card">
+        <div class="inputs">
+            <app-input
+                (inputChange)="onEmailChange($event)"
+                type="email"
+                label="Correo"
+            ></app-input>
+            <app-input
+                (inputChange)="onPasswordChange($event)"
+                type="password"
+                label="Contraseña"
+            ></app-input>
+        </div>
+        <app-button
+            (buttonClick)="onLogin()"
+            text="Iniciar sesión"
+            [color]="loginButtonColor"
+            [disabled]="!emailInputIsValid"
+        ></app-button>
+    </div>
+</main>
