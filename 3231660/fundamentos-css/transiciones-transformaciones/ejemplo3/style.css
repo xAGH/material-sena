@@ -1,0 +1,31 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+    gap: 1rem;
+    position: relative;
+}
+
+.btn {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    background-color: lightblue;
+    color: #383838;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s linear;
+    width: 200px;
+}
+
+.btn:hover {
+    transform: translateX(-20px);
+}

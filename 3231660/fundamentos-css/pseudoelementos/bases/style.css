@@ -1,0 +1,40 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lorem::before {
+    content: "hola";
+    color: red;
+    background-color: #000;
+}
+
+.lorem::after {
+    content: "adios";
+    color: red;
+    background-color: #000;
+}
+
+.lorem::first-letter {
+    font-size: 2rem;
+    color: yellow;
+}
+
+.lorem::first-line {
+    background-color: blue;
+}
+
+.lorem::selection {
+    background-color: yellow;
+    color: red;
+}

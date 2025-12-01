@@ -1,0 +1,32 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-bottom: 10px solid black;
+    border-right: 10px solid black;
+    animation: load infinite ease-in 1s;
+}
