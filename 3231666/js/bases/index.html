@@ -12,9 +12,15 @@
             </p>
         </div>
     </body>
-    <script src="./variables.js"></script>
-    <script src="./operadores.js"></script>
-    <script src="./tipos&coercion.js"></script>
-    <script src="./estructuras-control.js"></script>
-    <script src="./funciones.js"></script>
+    <script>
+        const nombres = ["Alejo", "Alejo Marin", "Angela", "Jerlo", "Manuela"];
+
+        for (let i = 0; i < nombres.length; i++) {
+            console.log(nombres[i]);
+        }
+
+        for (const nombre of nombres) {
+            console.log(nombre);
+        }
+    </script>
 </html>

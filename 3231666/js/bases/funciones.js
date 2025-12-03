@@ -1,18 +1,22 @@
-function sumar1(a, b) {
-    return a + b;
+// Función "normal"
+function sumar1(num1, num2 = 2) {
+    return num1 + num2;
 }
 
-const sumar2 = function (a, b) {
-    return a + b;
+// Función anónima
+const sumar2 = function (num1, num2) {
+    return num1 + num2;
 };
 
-const sumar3 = (a, b) => {
-    return a + b;
+// Función anónima ó Función flecha con retorno explícito
+const sumar3 = (num1, num2) => {
+    return num1 + num2;
 };
 
-const sumar4 = (a, b) => a + b;
+// Función anónima ó Función flecha con retorno implícito
+const sumar4 = (num1, num2) => num1 + num2;
 
-console.log(sumar1(1, 3));
-console.log(sumar2(2, 2));
-console.log(sumar3(1, 1));
-console.log(sumar4(1, 5));
+console.log(sumar1(1, 1));
+console.log(sumar2(3, 2));
+console.log(sumar3(5, 2));
+console.log(sumar4(2, 9));

@@ -11,3 +11,5 @@ const numero = "10";
 console.log(+"5"); // 5 (string a number)
 console.log("" + 5); // '5' (number a string)
 console.log(!!"OK"); // true (truthy)
+
+const name = "Alejo";
