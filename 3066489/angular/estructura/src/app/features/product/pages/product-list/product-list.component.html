@@ -1,22 +1,20 @@
-<div class="product-grid">
-    <div class="product-card" *ngFor="let p of products">
-        <button class="remove-btn" (click)="onRemove(p)">✕</button>
+<div class="page">
+    <app-navbar></app-navbar>
+    <div class="product-grid">
+        <div class="product-card" *ngFor="let album of albums">
+            <button class="remove-btn" (click)="onRemove(album)">✕</button>
 
-        <div class="image-container">
-            <img
-                *ngIf="p.imageUrl; else noImage"
-                [src]="p.imageUrl"
-                alt="{{ p.name }}"
-            />
-            <ng-template #noImage>
-                <div class="no-image">Sin imagen</div>
-            </ng-template>
-        </div>
+            <div class="image-container">
+                <img src="https://placehold.co/300" />
+            </div>
 
-        <div class="info">
-            <h3>{{ p.name }}</h3>
-            <p class="description">{{ p.description }}</p>
-            <p class="price">${{ p.price | number }}</p>
+            <div class="info">
+                <h3>{{ album.title }}</h3>
+                <span>${{ album.albumId }}</span>
+                <span>{{ album.id }}</span>
+                <span>${{ album.url }}</span>
+                <span>${{ album.thumbnailUrl }}</span>
+            </div>
         </div>
     </div>
 </div>

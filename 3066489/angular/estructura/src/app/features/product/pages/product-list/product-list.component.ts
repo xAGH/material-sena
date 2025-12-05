@@ -1,17 +1,23 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from "../../../../shared/models/product";
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Product } from '../../../../shared/models/product';
+import { Album } from 'src/app/shared/models/album';
+import { AlbumService } from 'src/app/core/services/album.service';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+    selector: 'app-product-list',
+    templateUrl: './product-list.component.html',
+    styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+    albums: Album[] = [];
 
-  @Input() products: Product[] = [];
-  @Output() remove = new EventEmitter<Product>();
+    constructor(private albumService: AlbumService) {}
 
-  onRemove(product: Product) {
-    this.remove.emit(product);
-  }
+    ngOnInit(): void {
+        this.albumService.getAlbums().subscribe((res) => {
+            this.albums = res;
+        });
+    }
+
+    onRemove(album: Album) {}
 }

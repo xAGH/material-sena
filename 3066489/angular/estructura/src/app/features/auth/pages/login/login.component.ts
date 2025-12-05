@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { ButtonColor } from 'src/app/shared/enums/button-color';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+    loginButtonColor = ButtonColor.SUCCESS;
+    email: string = '';
+    password: string = '';
 
-    loginButtonColor = ButtonColor.SUCCESS
-    email: string = "";
-    password: string = "";
+    constructor(private authService: AuthService) {}
 
     onEmailChange(text: string) {
         this.email = text;
@@ -21,12 +23,12 @@ export class LoginComponent {
     }
 
     onLogin() {
-        console.log("Se dio click en login")
+        this.authService.login(this.email, this.password);
+        console.log(this.authService.authenticated);
     }
 
     get emailInputIsValid(): boolean {
-        const regex = /^\S+@\S+\.\S+$/
-        return regex.test(this.email)
+        const regex = /^\S+@\S+\.\S+$/;
+        return regex.test(this.email);
     }
-
 }

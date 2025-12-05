@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Product } from './shared/models/product';
+import { AuthService } from './core/services/auth.service';
+import { AlbumService } from './core/services/album.service';
+import { Album } from './shared/models/album';
 
 @Component({
     selector: 'app-root',
@@ -7,146 +9,14 @@ import { Product } from './shared/models/product';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    PRODUCTS: Product[] = [
-        {
-            id: 1,
-            name: 'Mouse inalámbrico',
-            description: 'Mouse óptico con 1600 DPI',
-            price: 45000,
-            imageUrl: 'https://picsum.photos/300?random=1',
-        },
-        {
-            id: 2,
-            name: 'Teclado mecánico',
-            description: 'Switch azul, retroiluminado RGB',
-            price: 180000,
-            imageUrl: 'https://picsum.photos/300?random=2',
-        },
-        {
-            id: 3,
-            name: 'Audífonos Bluetooth',
-            description: 'Cancelación de ruido activa',
-            price: 250000,
-            imageUrl: 'https://picsum.photos/300?random=3',
-        },
-        {
-            id: 4,
-            name: 'Monitor 24"',
-            description: '144Hz, 1ms, IPS',
-            price: 750000,
-            imageUrl: 'https://picsum.photos/300?random=4',
-        },
-        {
-            id: 5,
-            name: 'Silla Gamer',
-            description: 'Cuero sintético, reclinable 180°',
-            price: 650000,
-            imageUrl: 'https://picsum.photos/300?random=5',
-        },
-        {
-            id: 6,
-            name: 'Portátil Core i5',
-            description: '8GB RAM, 256GB SSD',
-            price: 2300000,
-            imageUrl: 'https://picsum.photos/300?random=6',
-        },
-        {
-            id: 7,
-            name: 'Webcam HD',
-            description: '1080p, micrófono integrado',
-            price: 90000,
-            imageUrl: 'https://picsum.photos/300?random=7',
-        },
-        {
-            id: 8,
-            name: 'Disco SSD 1TB',
-            description: 'Velocidad 3500MB/s NVMe',
-            price: 380000,
-            imageUrl: 'https://picsum.photos/300?random=8',
-        },
-        {
-            id: 9,
-            name: 'Tarjeta gráfica 6GB',
-            description: 'Ideal para gaming 1080p',
-            price: 1250000,
-            imageUrl: 'https://picsum.photos/300?random=9',
-        },
-        {
-            id: 10,
-            name: 'Memoria RAM 16GB',
-            description: 'DDR4 3200MHz',
-            price: 180000,
-            imageUrl: 'https://picsum.photos/300?random=10',
-        },
-        {
-            id: 11,
-            name: 'Cargador USB-C',
-            description: 'Fast charge 25W',
-            price: 35000,
-            imageUrl: 'https://picsum.photos/300?random=11',
-        },
-        {
-            id: 12,
-            name: 'Cable HDMI 2.1',
-            description: '8K 60Hz / 4K 120Hz',
-            price: 30000,
-            imageUrl: 'https://picsum.photos/300?random=12',
-        },
-        {
-            id: 13,
-            name: 'Tablet 10.1"',
-            description: '64GB, Octa-core',
-            price: 550000,
-            imageUrl: 'https://picsum.photos/300?random=13',
-        },
-        {
-            id: 14,
-            name: 'Impresora multifuncional',
-            description: 'WiFi, tinta continua',
-            price: 690000,
-            imageUrl: 'https://picsum.photos/300?random=14',
-        },
-        {
-            id: 15,
-            name: 'Parlante Bluetooth',
-            description: 'A prueba de agua IPX7',
-            price: 120000,
-            imageUrl: 'https://picsum.photos/300?random=15',
-        },
-        {
-            id: 16,
-            name: 'Router WiFi 6',
-            description: 'Dual band 1800Mbps',
-            price: 220000,
-            imageUrl: 'https://picsum.photos/300?random=16',
-        },
-        {
-            id: 17,
-            name: 'Smartwatch',
-            description: 'Monitor de ritmo cardiaco y sueño',
-            price: 300000,
-            imageUrl: 'https://picsum.photos/300?random=17',
-        },
-        {
-            id: 18,
-            name: 'USB 64GB',
-            description: 'Velocidad USB 3.2',
-            price: 45000,
-            imageUrl: 'https://picsum.photos/300?random=18',
-        },
-        {
-            id: 19,
-            name: 'Base para portátil',
-            description: 'Ajustable con ventiladores',
-            price: 60000,
-            imageUrl: 'https://picsum.photos/300?random=19',
-        },
-        {
-            id: 20,
-            name: 'Micrófono USB',
-            description: 'Ideal para streaming',
-            price: 150000,
-            imageUrl: 'https://picsum.photos/300?random=20',
-        },
-    ];
+    albums: Album[] = [];
+
+    constructor(
+        private authService: AuthService,
+        private albumService: AlbumService
+    ) {}
+
+    get authenticated() {
+        return this.authService.authenticated;
+    }
 }
