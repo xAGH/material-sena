@@ -1,0 +1,22 @@
+<div class="product-grid">
+    <div class="product-card" *ngFor="let p of products">
+        <button class="remove-btn" (click)="onRemove(p)">✕</button>
+
+        <div class="image-container">
+            <img
+                *ngIf="p.imageUrl; else noImage"
+                [src]="p.imageUrl"
+                alt="{{ p.name }}"
+            />
+            <ng-template #noImage>
+                <div class="no-image">Sin imagen</div>
+            </ng-template>
+        </div>
+
+        <div class="info">
+            <h3>{{ p.name }}</h3>
+            <p class="description">{{ p.description }}</p>
+            <p class="price">${{ p.price | number }}</p>
+        </div>
+    </div>
+</div>
