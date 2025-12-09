@@ -36,4 +36,10 @@ export class EnrollementService {
         );
         return this.getEnrollementById(id);
     }
+
+    studentsInCourse(courseId: number) {
+        return enrollements.filter(
+            (enrollement) => enrollement.courseId === courseId
+        ).length;
+    }
 }

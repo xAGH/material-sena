@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CourseService } from "../services/course.service";
+import { Course } from "../models/course.model";
 
 const service = new CourseService();
 
@@ -19,7 +20,7 @@ export function getCourseById(req: Request, res: Response) {
 }
 
 export function createCourse(req: Request, res: Response) {
-    const course = req.body;
+    const course: Course = req.body;
     service.createCourse(course);
     res.status(201).json({ message: "Curso creado" });
 }

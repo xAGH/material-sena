@@ -46,17 +46,10 @@ export function getEnrollementsByCourseId(req: Request, res: Response) {
 export function createEnrollement(req: Request, res: Response) {
     const enrollement: Enrollement = req.body;
 
-    console.log(enrollement);
-    console.log(studentsService.getStudentById(enrollement.studentId));
-
     if (!studentsService.getStudentById(enrollement.studentId)) {
         return res
             .status(400)
             .json({ message: "El estudiante indicado no existe" });
-    }
-
-    if (!courseService.getCourseById(enrollement.courseId)) {
-        return res.status(400).json({ message: "El curso indicado no existe" });
     }
 
     service.createEnrollement(enrollement);
