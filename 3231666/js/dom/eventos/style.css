@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 1rem 2rem;
+    background-color: lightblue;
+    border-radius: 10px;
+    border: none;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

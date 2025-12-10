@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 4px solid gray;
+    border-radius: 8px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 50%;
+    gap: 1rem;
+    width: 500px;
+}
+
+.display {
+    grid-column: span 4;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(184, 184, 184);
+    font-size: 4rem;
+    text-align: end;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(184, 184, 184);
+    font-size: 1.5rem;
+}
+
+.brand {
+    margin-top: 2rem;
+    grid-column: span 4;
+    text-align: center;
+    font-size: 2rem;
+}
