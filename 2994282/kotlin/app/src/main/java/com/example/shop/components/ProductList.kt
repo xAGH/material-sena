@@ -15,7 +15,7 @@ fun ProductList(
     onAdd: (Int) -> Unit,
     onRemove: (Int) -> Unit,
 ) {
-    LazyColumn{
+    LazyColumn {
         items(products) { product ->
             ProductCard(
                 product = product,

@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.add {
+    width: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: rgb(115, 255, 77);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgb(78, 222, 0);
+}
+
+.add:hover {
+    transform: scale(1.1);
+}
+
+input,
+select {
+    outline: none;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid rgb(78, 222, 0);
+    background-color: transparent;
+}
+
+.todos {
+    width: 100%;
+    height: 70%;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    gap: 1rem;
+}
+
+.card {
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    flex-grow: 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.pending {
+    background-color: lightblue;
+}
+
+.in-progress {
+    background-color: lightyellow;
+}
+
+.completed {
+    background-color: lightgreen;
+}

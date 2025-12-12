@@ -39,8 +39,7 @@ fun ProductCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(4.dp),
-        shape = RoundedCornerShape(16.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        shape = RoundedCornerShape(16.dp)
     ) {
         Row (
             modifier = Modifier.padding(16.dp),

@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    border: 1px solid gray;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 8px;
+    gap: 0.5rem;
+}
+
+.display {
+    grid-column: span 4;
+    width: 100%;
+    background-color: rgb(172, 172, 172);
+    height: 1.5rem;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem;
+    text-align: center;
+    cursor: pointer;
+}

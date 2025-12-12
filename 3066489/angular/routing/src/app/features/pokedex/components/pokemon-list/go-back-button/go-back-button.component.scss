@@ -1,0 +1,19 @@
+button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--success-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.material-symbols-outlined {
+  font-size: 2rem;
+}

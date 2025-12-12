@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.counter-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.decrement {
+    background-color: rgb(255, 130, 130);
+}
+
+.increment {
+    background-color: rgb(166, 255, 107);
+}
+
+.clear {
+    background-color: rgb(232, 241, 109);
+}

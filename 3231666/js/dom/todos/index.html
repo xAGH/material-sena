@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="form">
+            <div class="inputs">
+                <input
+                    type="text"
+                    id="todo-name"
+                    class="name"
+                    placeholder="Nombre de la tarea"
+                />
+                <select id="todo-status">
+                    <option value="PENDIENTE">PENDIENTE</option>
+                    <option value="EN_PROCESO">EN PROCESO</option>
+                    <option value="FINALIZADO">FINALIZADO</option>
+                </select>
+            </div>
+            <button onclick="addTodo()" class="add">Agregar</button>
+        </div>
+        <div id="todos-list" class="todos"></div>
+    </body>
+    <script src="./index.js"></script>
+</html>
