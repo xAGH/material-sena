@@ -1,10 +1,11 @@
 <div class="pokemon-card">
   <div class="image-wrapper">
-    <app-pokemon-type-badge
-      *ngFor="let type of pokemon.types"
-      class="type-badge-overlay"
-      [type]="type"
-    ></app-pokemon-type-badge>
+    <section class="badges">
+      <app-pokemon-type-badge
+        *ngFor="let type of pokemon.types"
+        [type]="type"
+      ></app-pokemon-type-badge>
+    </section>
 
     <img class="pokemon-image" [src]="pokemon.sprite" [alt]="pokemon.name" />
   </div>

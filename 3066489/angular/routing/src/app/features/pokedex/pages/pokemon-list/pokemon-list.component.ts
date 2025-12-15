@@ -21,6 +21,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   onSearch(search: string) {
+    console.log(search);
     const value = search.toLowerCase().trim();
 
     this.filteredPokemons = this.pokemons.filter((pokemon) =>

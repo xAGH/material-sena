@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchInputComponent {
   @Output() write: EventEmitter<string> = new EventEmitter();
 
-  onChange(event: Event) {
+  onInput(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.write.emit(value);
   }

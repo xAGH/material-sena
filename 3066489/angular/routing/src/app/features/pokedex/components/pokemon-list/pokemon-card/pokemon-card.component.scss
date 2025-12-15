@@ -27,10 +27,13 @@
   transform: scale(1.05);
 }
 
-.type-badge-overlay {
+.badges {
   position: absolute;
   top: 14px;
   right: 14px;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
 }
 
 .card-body {
