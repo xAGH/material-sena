@@ -1,1 +1,17 @@
-<p>card works!</p>
+<div class="pokemon-card">
+  <div class="image-wrapper">
+    <app-pokemon-type-badge
+      *ngFor="let type of pokemon.types"
+      class="type-badge-overlay"
+      [type]="type"
+    ></app-pokemon-type-badge>
+
+    <img class="pokemon-image" [src]="pokemon.sprite" [alt]="pokemon.name" />
+  </div>
+
+  <div class="card-body">
+    <h3 class="pokemon-name">{{ pokemon.name }}</h3>
+
+    <button class="detail-button" (click)="viewDetail()">Ver detalle</button>
+  </div>
+</div>

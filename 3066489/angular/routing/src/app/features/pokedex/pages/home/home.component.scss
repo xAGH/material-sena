@@ -20,12 +20,15 @@
   border: none;
   font-size: 2rem;
   padding: 1rem 2rem;
-  transition: transform 0.3s ease;
   cursor: pointer;
   background-color: var(--success-color);
   border-radius: 8px;
 
   &:hover {
-    transform: scale(1.05);
+    background-color: var(--accent-color);
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }

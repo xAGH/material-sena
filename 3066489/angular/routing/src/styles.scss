@@ -1,5 +1,7 @@
 :root {
   --success-color: #5cff5c;
+  --accent-color: #4de84d;
+  --on-success-color: black;
 }
 
 *,
@@ -8,9 +10,27 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 body {
   width: 100vw;
   height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+p,
+span,
+label {
+  font-weight: 400;
+}
+
+button {
+  font-weight: 500;
 }

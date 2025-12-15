@@ -11,7 +11,5 @@ export class SearchInputComponent {
   onChange(event: Event) {
     const value = (event.target as HTMLInputElement).value;
     this.write.emit(value);
-    console.log('ENTRA');
-    console.log(value);
   }
 }

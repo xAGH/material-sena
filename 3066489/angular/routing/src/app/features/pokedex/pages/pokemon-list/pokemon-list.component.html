@@ -1,8 +1,13 @@
 <div class="container">
-  <app-go-back-button></app-go-back-button>
-  <app-search-input></app-search-input>
+  <nav>
+    <app-go-back-button></app-go-back-button>
+    <app-search-input (write)="onSearch($event)"></app-search-input>
+  </nav>
 
   <section class="cards">
-    <app-pokemon-card></app-pokemon-card>
+    <app-pokemon-card
+      *ngFor="let pokemon of filteredPokemons"
+      [pokemon]="pokemon"
+    ></app-pokemon-card>
   </section>
 </div>

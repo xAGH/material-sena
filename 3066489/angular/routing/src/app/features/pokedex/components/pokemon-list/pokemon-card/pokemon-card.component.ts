@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Pokemon } from '../../../models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.scss'],
 })
-export class PokemonCardComponent {}
+export class PokemonCardComponent {
+  @Input() pokemon!: Pokemon;
+
+  viewDetail() {
+    console.log('Ver detalle del pokemon', this.pokemon.id);
+  }
+}

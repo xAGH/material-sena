@@ -7,6 +7,8 @@ import { GoBackButtonComponent } from './pokedex/components/pokemon-list/go-back
 import { PokemonCardComponent } from './pokedex/components/pokemon-list/pokemon-card/pokemon-card.component';
 import { PokemonDetailComponent } from './pokedex/pages/pokemon-detail/pokemon-detail.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonTypeBadgeComponent } from './pokedex/components/pokemon-list/pokemon-type-badge/pokemon-type-badge.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,9 @@ import { RouterModule } from '@angular/router';
     SearchInputComponent,
     GoBackButtonComponent,
     PokemonDetailComponent,
+    PokemonTypeBadgeComponent,
   ],
-  imports: [CommonModule, RouterModule],
-  exports: [HomeComponent],
+  imports: [CommonModule, RouterModule, HttpClientModule],
+  exports: [],
 })
 export class FeaturesModule {}
