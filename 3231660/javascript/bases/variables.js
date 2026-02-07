@@ -1,5 +1,10 @@
+var a = "";
+let b = "Alejo";
 const PI = 3.14;
 const name = "Alejo";
+const saludo = `Hola como
+
+estás ${name}`; // Backticks
 let active = true;
 console.log(typeof active);
 active = "HOLA";
