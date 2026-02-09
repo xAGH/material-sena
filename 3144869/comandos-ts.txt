@@ -1,0 +1,5 @@
+npm init -y -> Inicia proyecto de node.
+npm install -D typescript -> Instala typescript como dependecia de desarrollo.
+npx -> Indica que se utilizará un binario dentro de node_modules/.bin.
+npx tsc --init -> Inicia configuración inicial de typescript.
+npx tsc -> Transpilar typescript a javascript.
