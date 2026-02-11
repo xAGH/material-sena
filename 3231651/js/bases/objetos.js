@@ -1,4 +1,3 @@
-// Objetos de clase
 class Instructor {
     name = "Alejo";
     age = 22;
@@ -7,6 +6,7 @@ class Instructor {
     getName() {}
 }
 
+// Objetos de clase o instancia
 const instructor = new Instructor();
 instructor.age;
 instructor.name;
