@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fundamentos';
+  text = '';
+
+  onEscribir(param: string) {
+    this.text = param;
+    console.log(this.text);
+  }
 }

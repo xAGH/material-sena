@@ -1,0 +1,29 @@
+<div class="container">
+  <p *ngIf="counter > 5">El número es muy grande!</p>
+
+  <p *ngFor="let numero of numeros; let i = index">{{ i }}.{{ numero }}</p>
+
+  @if (counter > 5) {
+    <p>El número es muy grande!</p>
+  }
+
+  @for (numero of numeros; track $index) {
+    <p>{{ numero }}</p>
+  }
+
+  <div class="row">
+    <app-action-button
+      (action)="decrementar()"
+      backgroundColor="#FF0000"
+      text="-"
+    ></app-action-button>
+    <p>{{ counter }}</p>
+
+    <app-action-button (action)="incrementar()" text="+"></app-action-button>
+  </div>
+  <app-action-button
+    (action)="resetear()"
+    backgroundColor="yellow"
+    text="Clear"
+  ></app-action-button>
+</div>
