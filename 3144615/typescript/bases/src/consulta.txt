@@ -1,0 +1,7 @@
+En typescript investigar:
+
+Type Narrowing
+Generic Types
+Promises
+Callbacks
+Async - Await
