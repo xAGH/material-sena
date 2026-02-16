@@ -3,3 +3,11 @@ npm install -D typescript -> Instala typescript como dependecia de desarrollo.
 npx -> Indica que se utilizará un binario dentro de node_modules/.bin.
 npx tsc --init -> Inicia configuración inicial de typescript.
 npx tsc -> Transpilar typescript a javascript.
+npx ng -> CLI de Angular.
+npx ng serve -> Inicia el servidor de desarrollo de Angular. Bandera 'o' para abrir el navegador automáticamente.
+npx ng generate -> También funciona solo con 'g'.Genera recursos de angular, como:
+	- Componentes (components ó c)
+	- Módulos (module ó m)
+	- Servicios (service ó s)
+	- Directivas (directive ó d)
+	- ...
