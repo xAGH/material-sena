@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main class="container">
+            <h1>Buscar usuarios</h1>
+            <input id="idInput" class="id-input" type="number" />
+            <button onclick="onClick()" id="searchButton" class="search-btn">
+                Buscar
+            </button>
+
+            <span style="font-size: 2rem" class="hide" id="loading"
+                >Cargando...</span
+            >
+
+            <div id="userContainer" class="user-container hide">
+                <h3 class="user-container-title">Usuario encontrado</h3>
+                <span>Nombre: </span>
+                <span id="userName">Alejo</span>
+                <span>Email: </span>
+                <span id="userEmail">alejo@email.com</span>
+            </div>
+
+            <h3 id="errorMessage" class="error hide"></h3>
+        </main>
+    </body>
+
+    <script src="script.js"></script>
+</html>
