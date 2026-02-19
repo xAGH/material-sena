@@ -32,18 +32,7 @@ function getUserCard(user) {
 </article>`;
 }
 
-async function loadUsers() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const users = await response.json();
-    return users;
-}
-
-async function showUsers() {
-    const users = await loadUsers();
-    printUsers(users);
-}
-
-function printUsers(users) {
+export function printUsers(users) {
     users.forEach((user) => {
         const card = getUserCard(user);
         const container = document.getElementById("container");
