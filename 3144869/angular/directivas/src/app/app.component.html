@@ -1,0 +1,33 @@
+<button (click)="authenticate()">Autenticar</button>
+<p>{{ auth }}</p>
+<p *ngIf="auth; else noAuth">Bienvenido Alejo</p>
+
+<ng-template #noAuth>
+  <p>No estás autenticado</p>
+</ng-template>
+
+<button [disabled]="true" (click)="loadUsers()">Cargar Usuarios</button>
+
+<section class="users">
+  <article *ngFor="let user of users; let i = index" class="card">
+    <span>Índice: {{ i }}</span>
+    <span class="id">{{ user.id }}</span>
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.email }}</p>
+  </article>
+</section>
+
+<section [ngSwitch]="day">
+  <p *ngSwitchCase="'Lunes'" appHighlight>Es lunes, te toca matemáticas</p>
+  <p *ngSwitchCase="'Martes'">Es martes, te toca español</p>
+  <p *ngSwitchCase="'Miércoles'">Es miércoles, te toca angular</p>
+  <p *ngSwitchCase="'Jueves'">Es jueves, te toca inglés</p>
+  <p *ngSwitchCase="'Viernes'">Es viernes, te toca backend</p>
+  <p *ngSwitchDefault>No tienes clase el día de hoy</p>
+</section>
+
+<p appHighlight>Este texto está resaltado</p>
+
+<input [(ngModel)]="name" (input)="onInput()" type="text" />
+
+<button (click)="changeName()">Cambiar texto</button>
