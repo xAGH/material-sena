@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <span id="text">Texto Por Defecto</span>
+
+        <button onclick="cambiarTexto()">Cambiar texto</button>
+    </body>
+    <script>
+        const span = document.getElementById("text");
+
+        async function ponerTexto() {
+            return new Promise((res) => {
+                setTimeout(() => {
+                    span.textContent = "Texto cambiado";
+                    res();
+                }, 2000);
+            });
+        }
+
+        async function cambiarTexto() {
+            console.log("Cambiando texto...");
+            await ponerTexto();
+            console.log("Texto cambiado con éxito");
+        }
+    </script>
+</html>
