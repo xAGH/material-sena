@@ -1,0 +1,9 @@
+<div class="container">
+  <p
+    *ngFor="let text of texts; let i = index"
+    class="text"
+    (click)="deleteText(i)"
+  >
+    {{ text }}
+  </p>
+</div>

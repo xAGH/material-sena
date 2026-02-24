@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
+})
+export class AppComponent {
+  constructor(private authService: AuthService) {}
+
+  logIn() {
+    this.authService.logIn();
+  }
+
+  logOut() {
+    this.authService.logOut();
+  }
+
+  get isLogged() {
+    return this.authService.isLogged;
+  }
+}
