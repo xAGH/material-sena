@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input id="input" type="text" />
+        <button id="save">Guardar</button>
+        <div id="container"></div>
+    </body>
+    <script>
+        const input = document.getElementById("input");
+        const btn = document.getElementById("save");
+        const container = document.getElementById("container");
+
+        const render = () => {
+            state.tasks.forEach((task) => {
+                container.innerHTML += `<p>${task}</p>`;
+            });
+        };
+
+        const tasksInLocalStorage = localStorage.getItem("tasks");
+
+        if (state.tasks.length === 0 && tasksInLocalStorage != null) {
+            state.tasks = JSON.parse(tasksInLocalStorage);
+            render();
+        }
+
+        btn.addEventListener("click", () => {
+            const value = input.value;
+            state.tasks.push(value);
+            render();
+            input.value = "";
+            localStorage.setItem("tasks", JSON.stringify(state.tasks));
+        });
+    </script>
+</html>
