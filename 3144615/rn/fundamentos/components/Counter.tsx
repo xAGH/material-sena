@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function App() {
+export function Counter() {
     const [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+        console.log("El componente de contador se montó");
+
+        return () => {
+            console.log("El componente se desmontó");
+        };
+    }, [counter]);
+
     return (
         <View style={styles.container}>
             <TouchableOpacity
