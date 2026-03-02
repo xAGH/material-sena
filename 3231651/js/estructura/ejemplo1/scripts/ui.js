@@ -2,22 +2,20 @@ const loadBtn = document.getElementById("load-btn");
 const container = document.getElementById("container");
 const spinner = document.getElementById("spinner");
 
-loadBtn.addEventListener("click", async () => {
-    spinner.classList.remove("hide");
-    spinner.classList.add("show");
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    const allFieldsTodos = await response.json();
-    const todos = allFieldsTodos.map((todo) => {
-        return {
-            id: todo.id,
-            title: todo.title,
-            completed: todo.completed,
-        };
+export async function initApp(callback) {
+    loadBtn.addEventListener("click", async () => {
+        spinner.classList.remove("hide");
+        spinner.classList.add("show");
+        try {
+            const todos = await callback();
+            spinner.classList.remove("show");
+            spinner.classList.add("hide");
+            render(todos);
+        } catch {
+            console.log("Error");
+        }
     });
-    spinner.classList.remove("show");
-    spinner.classList.add("hide");
-    render(todos);
-});
+}
 
 function getCard(todo) {
     const status = todo.completed ? "Completado" : "Pendiente";

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dashboard con Fetch API</title>
+
+        <!-- ================================================= -->
+        <!--                     CSS                           -->
+        <!-- ================================================= -->
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                margin: 0;
+                padding: 20px;
+                background-color: #f2f4f7;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                text-align: center;
+                color: #555;
+                margin-bottom: 20px;
+            }
+
+            .controls {
+                display: flex;
+                gap: 10px;
+                max-width: 800px;
+                margin: 0 auto 20px;
+            }
+
+            input {
+                flex: 1;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+                border: none;
+                cursor: pointer;
+                background-color: #2563eb;
+                color: white;
+                border-radius: 4px;
+            }
+
+            button:hover {
+                background-color: #1e40af;
+            }
+
+            .status {
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            .error {
+                color: red;
+            }
+
+            .loading {
+                color: #2563eb;
+            }
+
+            .grid {
+                max-width: 1100px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 15px;
+            }
+
+            .card {
+                background-color: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .card h3 {
+                margin: 0;
+                font-size: 16px;
+            }
+
+            .card p {
+                margin: 0;
+                font-size: 14px;
+                color: #555;
+            }
+
+            .author {
+                font-size: 12px;
+                color: #777;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Dashboard de Publicaciones</h1>
+        <p class="subtitle">Ejemplo completo usando Fetch API y JS puro</p>
+
+        <!-- ===================== -->
+        <!--      CONTROLES        -->
+        <!-- ===================== -->
+        <div class="controls">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar por título..."
+            />
+            <button id="loadBtn">Cargar publicaciones</button>
+        </div>
+
+        <!-- ===================== -->
+        <!--      ESTADO           -->
+        <!-- ===================== -->
+        <p id="status" class="status"></p>
+
+        <!-- ===================== -->
+        <!--      CONTENIDO        -->
+        <!-- ===================== -->
+        <div id="postsContainer" class="grid"></div>
+
+        <!-- ================================================= -->
+        <!--                  JAVASCRIPT                        -->
+        <!-- ================================================= -->
+        <script>
+            const loadBtn = document.getElementById("loadBtn");
+            const postsContainer = document.getElementById("postsContainer");
+            const statusEl = document.getElementById("status");
+            const searchInput = document.getElementById("searchInput");
+
+            let posts = [];
+            let users = [];
+
+            // =====================
+            // Cargar datos
+            // =====================
+            async function loadData() {
+                try {
+                    statusEl.textContent = "Cargando datos...";
+                    statusEl.className = "status loading";
+                    postsContainer.innerHTML = "";
+
+                    const [postsResponse, usersResponse] = await Promise.all([
+                        fetch("https://jsonplaceholder.typicode.com/posts"),
+                        fetch("https://jsonplaceholder.typicode.com/users"),
+                    ]);
+
+                    if (!postsResponse.ok || !usersResponse.ok) {
+                        throw new Error("Error al obtener datos");
+                    }
+
+                    posts = await postsResponse.json();
+                    users = await usersResponse.json();
+
+                    renderPosts(posts);
+                    statusEl.textContent = `Se cargaron ${posts.length} publicaciones`;
+                    statusEl.className = "status";
+                } catch (error) {
+                    statusEl.textContent = error.message;
+                    statusEl.className = "status error";
+                }
+            }
+
+            // =====================
+            // Renderizar posts
+            // =====================
+            function renderPosts(data) {
+                postsContainer.innerHTML = "";
+
+                data.forEach((post) => {
+                    const user = users.find((u) => u.id === post.userId);
+
+                    const card = document.createElement("div");
+                    card.className = "card";
+
+                    card.innerHTML = `
+          <h3>${post.title}</h3>
+          <p>${post.body}</p>
+          <span class="author">
+            Autor: ${user ? user.name : "Desconocido"}
+          </span>
+        `;
+
+                    postsContainer.appendChild(card);
+                });
+            }
+
+            // =====================
+            // Filtro por búsqueda
+            // =====================
+            searchInput.addEventListener("input", () => {
+                const value = searchInput.value.toLowerCase();
+
+                const filteredPosts = posts.filter((post) =>
+                    post.title.toLowerCase().includes(value),
+                );
+
+                renderPosts(filteredPosts);
+                statusEl.textContent = `Resultados: ${filteredPosts.length}`;
+            });
+
+            // =====================
+            // Eventos
+            // =====================
+            loadBtn.addEventListener("click", loadData);
+        </script>
+    </body>
+</html>
