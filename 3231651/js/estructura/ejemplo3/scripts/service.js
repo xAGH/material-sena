@@ -1,5 +1,4 @@
-let usersList = [];
-let postsList = [];
+import { setState, getState } from "./state.js";
 
 export async function loadData() {
     const [postsResponse, usersResponse] = await Promise.all([
@@ -14,13 +13,14 @@ export async function loadData() {
     const posts = await postsResponse.json();
     const users = await usersResponse.json();
 
-    usersList = users;
-    postsList = posts;
+    setState("usersList", users);
+    setState("postsList", posts);
 
     return [posts, users];
 }
 
 export function searchPost(value) {
+    const postsList = getState("postsList");
     const filteredPosts = postsList.filter((post) =>
         post.title.toLowerCase().includes(value),
     );
@@ -29,5 +29,6 @@ export function searchPost(value) {
 }
 
 export function searchUser(userId) {
+    const usersList = getState("usersList");
     return usersList.find((u) => u.id === userId);
 }
