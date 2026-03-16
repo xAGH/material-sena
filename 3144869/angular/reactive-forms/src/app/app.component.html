@@ -1,0 +1,22 @@
+<!-- <p>{{ title | uppercase | titlecase | lowercase }}</p>
+<p>{{ price | number: "5.5-10" }}</p>
+<p>{{ price | currency: "CAD" : "symbol-narrow" : "5.5-10" }}</p>
+<p>{{ name }}</p>
+<p>{{ name | firstLetter }}</p>
+ -->
+
+<form [formGroup]="form" action="">
+  <label for="name">Name</label>
+  <input formControlName="name" type="text" />
+
+  <label for="">Username</label>
+  <input formControlName="username" type="text" />
+
+  <label for="">Edad</label>
+  <input formControlName="age" type="number" />
+
+  <label for="">Password</label>
+  <input formControlName="password" type="password" />
+
+  <button (submit)="save()" (click)="save()" type="submit">Guardar</button>
+</form>
