@@ -7,16 +7,58 @@
 
 <form [formGroup]="form" action="">
   <label for="name">Name</label>
-  <input formControlName="name" type="text" />
+  <input
+    [ngClass]="{ 'input-error': isControlInvalid('name') }"
+    formControlName="name"
+    type="text"
+  />
+  <span class="error" *ngIf="hasError('name', 'required')"
+    >El campo es requerido</span
+  >
+  <span class="error" *ngIf="hasError('name', 'minlength')"
+    >El campo debe tener mínimo 3 caracteres</span
+  >
 
-  <label for="">Username</label>
-  <input formControlName="username" type="text" />
+  <label for="lastname">Last Name</label>
+  <input
+    [ngClass]="{ 'input-error': isControlInvalid('lastname') }"
+    formControlName="lastname"
+    type="text"
+  />
+  <span class="error" *ngIf="hasError('name', 'required')"
+    >El campo es requerido</span
+  >
+  <span class="error" *ngIf="hasError('name', 'minlength')"
+    >El campo debe tener mínimo 3 caracteres</span
+  >
+
+  <label for="">Email</label>
+  <input
+    [ngClass]="{ 'input-error': isControlInvalid('email') }"
+    formControlName="email"
+    type="text"
+  />
 
   <label for="">Edad</label>
-  <input formControlName="age" type="number" />
+  <input
+    [ngClass]="{ 'input-error': isControlInvalid('age') }"
+    formControlName="age"
+    type="number"
+  />
 
   <label for="">Password</label>
-  <input formControlName="password" type="password" />
+  <input
+    [ngClass]="{ 'input-error': isControlInvalid('password') }"
+    formControlName="password"
+    type="password"
+  />
 
-  <button (submit)="save()" (click)="save()" type="submit">Guardar</button>
+  <button
+    (submit)="save()"
+    (click)="save()"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Guardar
+  </button>
 </form>

@@ -5,3 +5,14 @@ form {
   align-items: center;
   flex-direction: column;
 }
+
+.error {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: rgb(255, 116, 116);
+}
+
+.input-error {
+  border: 1px solid rgb(255, 116, 116);
+  outline-color: rgb(255, 116, 116);
+}
