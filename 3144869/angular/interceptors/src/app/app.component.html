@@ -1,0 +1,36 @@
+<div class="toolbar">
+  <button class="load-btn" (click)="loadUsers()">Cargar usuarios</button>
+</div>
+
+<div class="toolbar">
+  <button class="load-btn" (click)="login()">Iniciar sesión</button>
+</div>
+
+<div class="cards-container">
+  <div class="card" *ngFor="let user of users">
+    <div class="card-header">
+      <h2>{{ user.name }}</h2>
+      <span class="username">{{ "@" }}{{ user.username }}</span>
+    </div>
+
+    <div class="card-body">
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Tel:</strong> {{ user.phone }}</p>
+      <p><strong>Web:</strong> {{ user.website }}</p>
+
+      <div class="section">
+        <h4>Dirección</h4>
+        <p>
+          {{ user.address.street }}, {{ user.address.suite }}<br />
+          {{ user.address.city }} - {{ user.address.zipcode }}
+        </p>
+      </div>
+
+      <div class="section">
+        <h4>Empresa</h4>
+        <p class="company-name">{{ user.company.name }}</p>
+        <p class="catchphrase">{{ user.company.catchPhrase }}</p>
+      </div>
+    </div>
+  </div>
+</div>
