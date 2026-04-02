@@ -14,5 +14,6 @@ RUN npm run build
 FROM nginx:alpine as runner
 
 COPY --from=build /app/dist/front/browser /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
 
 CMD ["nginx", "-g", "daemon off;"]

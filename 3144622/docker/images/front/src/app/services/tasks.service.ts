@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TasksService {
-  private api = 'express_backend:3000';
+  private api = '/api';
 
   constructor(private http: HttpClient) {}
 

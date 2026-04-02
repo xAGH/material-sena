@@ -1,0 +1,53 @@
+services:
+  back:
+    image: xagh/images-back
+    environment:
+      DB_HOST: db
+      DB_USER: tasks
+      DB_PASSWORD: tasks
+      DB_NAME: tasks
+      DB_PORT: 5432
+    ports:
+      - "3000:3000"
+    container_name: back-app
+    restart: no
+    networks:
+      - back-net
+      - front-net
+    depends_on:
+      db:
+        condition: service_healthy
+
+  front:
+    build: ./front/
+    ports:
+      - "8080:80"
+    container_name: front-app
+    restart: always
+    networks:
+      - front-net
+
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: tasks
+      POSTGRES_PASSWORD: tasks
+      POSTGRES_DB: tasks
+    restart: always
+    volumes:
+      - "database-data:/var/lib/postgresql/data"
+    networks:
+      - back-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tasks -d tasks"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+networks:
+  back-net:
+  front-net:
+
+volumes:
+  database-data:

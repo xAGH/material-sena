@@ -14,7 +14,7 @@ FROM node:lts-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/dist .
-COPY --from=builder /app/node_modules .
+COPY --from=builder /app/dist/server.js .
+COPY --from=builder /app/node_modules ./node_modules
 
-CMD [ "node", "dist/server.js" ]
+CMD [ "node", "server.js" ]
