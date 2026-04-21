@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Product } from '../../interfaces/product.interface';
+import { Component } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,5 +7,9 @@ import { Product } from '../../interfaces/product.interface';
   styleUrl: './product-list.component.scss',
 })
 export class ProductListComponent {
-  @Input() products: Product[] = [];
+  constructor(private productService: ProductService) {}
+
+  get products() {
+    return this.productService.products;
+  }
 }

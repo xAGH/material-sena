@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../../interfaces/product.interface';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -11,7 +12,7 @@ export class ProductFormComponent {
   name: string = '';
   @Input() title = '';
 
-  @Output() productCreated = new EventEmitter<Product>();
+  constructor(private productService: ProductService) {}
 
   emitProductCreated() {
     const product: Product = {
@@ -20,7 +21,7 @@ export class ProductFormComponent {
       price: this.price,
     };
 
-    this.productCreated.emit(product);
+    this.productService.addProduct(product);
 
     this.name = '';
     this.price = 0;
