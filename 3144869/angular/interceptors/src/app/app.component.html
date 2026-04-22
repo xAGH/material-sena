@@ -1,36 +1,47 @@
-<div class="toolbar">
-  <button class="load-btn" (click)="loadUsers()">Cargar usuarios</button>
-</div>
+<div class="container">
+  <h1>Angular + Express JWT</h1>
 
-<div class="toolbar">
-  <button class="load-btn" (click)="login()">Iniciar sesión</button>
-</div>
+  <div class="card">
+    <h2>Login</h2>
 
-<div class="cards-container">
-  <div class="card" *ngFor="let user of users">
-    <div class="card-header">
-      <h2>{{ user.name }}</h2>
-      <span class="username">{{ "@" }}{{ user.username }}</span>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" placeholder="Ingresa tu email" />
     </div>
 
-    <div class="card-body">
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Tel:</strong> {{ user.phone }}</p>
-      <p><strong>Web:</strong> {{ user.website }}</p>
-
-      <div class="section">
-        <h4>Dirección</h4>
-        <p>
-          {{ user.address.street }}, {{ user.address.suite }}<br />
-          {{ user.address.city }} - {{ user.address.zipcode }}
-        </p>
-      </div>
-
-      <div class="section">
-        <h4>Empresa</h4>
-        <p class="company-name">{{ user.company.name }}</p>
-        <p class="catchphrase">{{ user.company.catchPhrase }}</p>
-      </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" placeholder="Ingresa tu contraseña" />
     </div>
+
+    <div class="actions">
+      <button (click)="login()" [disabled]="loadingLogin">
+        {{ loadingLogin ? 'Ingresando...' : 'Login' }}
+      </button>
+
+      <button (click)="loadProfile()" [disabled]="loadingProfile">
+        {{ loadingProfile ? 'Consultando...' : 'Ver perfil' }}
+      </button>
+
+      <button (click)="logout()">Logout</button>
+    </div>
+
+    <p *ngIf="successMessage" class="success">
+      {{ successMessage }}
+    </p>
+
+    <p *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </p>
+  </div>
+
+  <div class="card" *ngIf="profile">
+    <h2>Perfil</h2>
+
+    <p><strong>ID:</strong> {{ profile.id }}</p>
+    <p><strong>Nombre:</strong> {{ profile.name }}</p>
+    <p><strong>Email:</strong> {{ profile.email }}</p>
+    <p><strong>Emitido en:</strong> {{ profile.iat }}</p>
+    <p><strong>Expira en:</strong> {{ profile.exp }}</p>
   </div>
 </div>
