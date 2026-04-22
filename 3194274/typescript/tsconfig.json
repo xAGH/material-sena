@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Resolución de módulos al pasar a JS, nodenext = como en la última versión de node (ESModule)
+    "module": "nodenext",
+    // Versión de EcmaScript (ES) de JS a la cual se va a transpilar.
+    "target": "esnext",
+    // Tipos de TS que se deben de tener en cuenta
+    "types": [],
+
+    // Definir configuración de transpilación de tipos
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    // Configuración de qué tan estricto será TS
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  }
+}
