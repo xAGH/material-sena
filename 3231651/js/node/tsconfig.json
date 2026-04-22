@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    // Carpeta raiz donde estarán los archivos de TS
+    "rootDir": "./src",
+    // Carpeta donde estarán los archivos transpilados de JS
+    "outDir": "./dist",
+
+    // Cómo se trabajarán los módulos (import / export)
+    "module": "nodenext",
+    // Versión de js a transpilar
+    "target": "esnext",
+    // Tipos de ts a tener en cuenta
+    "types": [],
+
+    // Declaración e información de tipado, eliminar o comentar por ahora
+    //"sourceMap": true,
+    //"declaration": true,
+    //"declarationMap": true,
+
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  }
+}
