@@ -1,0 +1,40 @@
+<div class="login-container">
+  <div class="login-card">
+
+    <h2 class="login-title">Iniciar Sesión</h2>
+    <p class="login-subtitle">Accede a tu cuenta</p>
+
+    <form class="login-form" [formGroup]="form">
+
+      <app-input [control]="form.get('email')!" name="email" text="Correo electrónico" type="email"
+        placeholder="ejemplo@correo.com"></app-input>
+
+      <app-input [control]="form.get('password')!" name="password" text="Contraseña" type="password"
+        placeholder="••••••••"></app-input>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" name="remember" />
+          Recordarme
+        </label>
+
+        <a href="#" class="forgot-password">
+          ¿Olvidaste tu contraseña?
+        </a>
+      </div>
+
+      <button type="submit" class="login-button">
+        Ingresar
+      </button>
+
+    </form>
+
+    <div class="login-footer">
+      <p>
+        ¿No tienes cuenta?
+        <a routerLink="/auth/register">Regístrate</a>
+      </p>
+    </div>
+
+  </div>
+</div>
