@@ -1,0 +1,58 @@
+package ejemplo_pc;
+
+abstract class CPU {
+    abstract void start();
+}
+
+abstract class GPU {
+    abstract void render();
+}
+
+class IntelCPU extends CPU {
+    @Override
+    public void start() {
+        System.out.println("Procesador Intel iniciado");
+    }
+}
+
+class RyzenCPU extends CPU {
+    @Override
+    public void start() {
+        System.out.println("Procesador Ryzen iniciado");
+    }
+}
+
+class NvidiaGPU extends GPU {
+    @Override
+    public void render() {
+        System.out.println("Renderizando con Nvidia");
+    }
+}
+
+class RadeonGPU extends GPU {
+    @Override
+    public void render() {
+        System.out.println("Renderizando con Nvidia");
+    }
+}
+
+class GamingPC {
+
+    private CPU processor;
+    private GPU gpu;
+
+    public GamingPC(CPU cpu, GPU gpu) {}
+
+    public void start() {
+        processor.start();
+        gpu.render();
+        System.out.println("PC encendido");
+    }
+}
+
+public class PCConDI {
+    public static void main(String[] args) {
+
+        pc.start();
+    }
+}
