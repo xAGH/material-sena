@@ -4,6 +4,7 @@
 // | -> Unión
 // & -> Concatenación
 
+// Type Narrowing
 type Alejo = string | number | boolean | null;
 
 type Giraldo = number;

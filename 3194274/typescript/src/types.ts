@@ -7,6 +7,7 @@
 // null = null
 // undefined = undefined
 // any -> Permite almacenar cualquier tipo de dato
+// unknown -> Desconocido
 
 const name: string = "Alejo";
 const lastname: string = "Giraldo";
