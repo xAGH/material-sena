@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    // Especificar la carpeta donde estarán los archivos de ts
+    // Especificar la carpeta donde estarán los archivos de TS
     "rootDir": "./src",
+
+    // Especificar la carpeta donde quedarán los archivos de JS
     "outDir": "./dist",
 
     /*
@@ -15,10 +17,10 @@
     // Declaración de tipos para ts de librerías construidas en js
     "types": [],
 
-    // Declaración de tipos al transiplar ts
-    "sourceMap": false,
-    "declaration": false,
-    "declarationMap": false,
+    // Declaración de tipos al transiplar ts. Se recomienda eliminar.
+    // "sourceMap": false,
+    // "declaration": false,
+    // "declarationMap": false,
 
     /*
       Establece undefined como valor por defecto al acceder a índices

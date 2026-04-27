@@ -36,7 +36,7 @@ class UserService {
 
     private Database database;
 
-    public UserService(PostgresDatabase postgres, MySQLDatabase mysql) {
+    public UserService(Database database) {
         this.database = database;
     }
 
@@ -50,7 +50,9 @@ public class ConDI {
     public static void main(String[] args) {
         PostgresDatabase postgres = new PostgresDatabase();
         MySQLDatabase mysql = new MySQLDatabase();
-        UserService service = new UserService(postgres, mysql);
+        UserService service = new UserService(postgres);
+        UserService service2 = new UserService(mysql);
         service.registerUser("Alejo");
+        service2.registerUser("Alejo");
     }
 }
