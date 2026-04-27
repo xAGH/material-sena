@@ -3,6 +3,7 @@ package com.sena.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// Anotaciones
 @SpringBootApplication
 public class DemoApplication {
 
