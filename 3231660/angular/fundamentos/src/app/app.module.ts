@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ButtonComponent } from './components/button/button.component';
 
 // Función decoradora
 @NgModule({
   // Declaración de componentes de este módulo
-  declarations: [AppComponent],
+  declarations: [AppComponent, ButtonComponent],
   // Importación de módulos que queremos utilizar
   imports: [BrowserModule],
   // Proveedores
