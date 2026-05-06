@@ -40,4 +40,4 @@ function calcular(a: number, b: number, operation: OperationFn) {
 
 calcular(1, 6, division);
 
-calcular(1, 6, (num1: number, num2: number): number => num1 % num2);
+calcular(1, 6, (num1: number, num2: number): number => num1 / num2);
