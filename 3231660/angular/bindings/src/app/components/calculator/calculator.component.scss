@@ -1,0 +1,27 @@
+.calculator {
+  width: 320px;
+
+  margin: 50px auto;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background: #1f1f1f;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.buttons {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+}

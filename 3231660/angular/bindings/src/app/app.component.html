@@ -1,21 +1,21 @@
-<!-- Tipos de binding -->
+<!-- Tipos de binding
 
-<!-- Interpolación {{}} -->
+Interpolación {{}}
 <h1> {{ age > 18 ? 'Es mayor de edad' : 'No es mayor de edad' }} </h1>
 
-<!-- Property binding [] -->
+Property binding []
 <input [type]="inputType" [min]="1 + 10" [max]="max">
 
 <br>
 
-<!-- Event binding () -->
+Event binding ()
 <button (click)="onClick($event)" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">Click me</button>
 
-<!-- Two way binding -->
-<!-- PENDIENTE -->
-
+Two way binding
+PENDIENTE
 <br>
-
 <app-boton (botonClick)="onBotonClick($event)" [textoInput]="textoInput1" [ficha660]="value"></app-boton>
-
 <app-boton (botonClick)="onBotonClick($event)" [textoInput]="textoInput2"></app-boton>
+-->
+
+<app-calculator></app-calculator>

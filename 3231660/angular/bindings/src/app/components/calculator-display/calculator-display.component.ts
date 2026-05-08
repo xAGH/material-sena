@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './calculator-display.component.scss',
 })
 export class CalculatorDisplayComponent {
-  @Input() text = 0;
+  @Input() text = '0';
 }

@@ -1,1 +1,29 @@
-<p>calculator works!</p>
+<div class="calculator">
+
+  <app-calculator-display [text]="display">
+  </app-calculator-display>
+
+  <div class="buttons">
+
+    <app-calculator-button (send)="handleInput($event)" text="7" />
+    <app-calculator-button (send)="handleInput($event)" text="8" />
+    <app-calculator-button (send)="handleInput($event)" text="9" />
+    <app-calculator-button (send)="handleInput($event)" [isDisabled]="operationsDiabled" text="/" />
+
+    <app-calculator-button (send)="handleInput($event)" text="4" />
+    <app-calculator-button (send)="handleInput($event)" text="5" />
+    <app-calculator-button (send)="handleInput($event)" text="6" />
+    <app-calculator-button (send)="handleInput($event)" [isDisabled]="operationsDiabled" text="*" />
+
+    <app-calculator-button (send)="handleInput($event)" text="1" />
+    <app-calculator-button (send)="handleInput($event)" text="2" />
+    <app-calculator-button (send)="handleInput($event)" text="3" />
+    <app-calculator-button (send)="handleInput($event)" [isDisabled]="operationsDiabled" text="-" />
+
+    <app-calculator-button (send)="handleInput($event)" text="0" />
+    <app-calculator-button (send)="handleInput($event)" [isDisabled]="operationsDiabled" text="+" />
+    <app-calculator-button (send)="handleInput($event)" text="=" style="grid-column: span 2;" />
+
+  </div>
+
+</div>

@@ -7,10 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class CalculatorButtonComponent {
   @Input() text: string = '';
+  @Input() isDisabled: boolean = false;
 
-  @Output() send = new EventEmitter();
+  @Output() send = new EventEmitter<string>();
 
   onClick() {
-    this.send.emit();
+    this.send.emit(this.text);
   }
 }
