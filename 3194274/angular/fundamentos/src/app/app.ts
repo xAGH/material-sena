@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,24 @@ import { Component, signal } from '@angular/core';
   standalone: false,
 })
 export class App {
-  protected readonly title = signal('fundamentos');
+  name = 'Alejo';
+  edad = 18;
+
+  texto = '';
+
+  check = true;
+
+  tipoInput = 'number';
+
+  onClick() {
+    this.texto = 'clear';
+  }
+
+  onMouseEnter() {
+    console.log('El mouse entró');
+  }
+
+  onMouseLeave() {
+    console.log('El mouse salió');
+  }
 }

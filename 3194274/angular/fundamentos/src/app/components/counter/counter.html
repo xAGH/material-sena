@@ -1,0 +1,13 @@
+<main class="container">
+
+  <div class="row">
+    <app-counter-button text="-" (buttonClicked)="decrement($event)"></app-counter-button>
+    <span>{{ counter }}</span>
+    <app-counter-button text="+" (buttonClicked)="increment($event)">+</app-counter-button>
+  </div>
+
+  <app-counter-button text="Clear" (buttonClicked)="clear()"></app-counter-button>
+
+</main>
+
+<input type="">
