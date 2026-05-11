@@ -1,0 +1,10 @@
+<main>
+  <app-square [color]="color" />
+  <span [style.color]="color">{{colorText}}</span>
+  <div>
+    <app-color-button (changeColor)="onChangeColor($event, 'Rojo')" color="#FF0000" text="Rojo" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Azul')" color="#0000FF" text="Azul" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Verde')" color="#00FF00" text="Verde" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Amarillo')" color="#FFFF00" text="Amarillo" />
+  </div>
+</main>
