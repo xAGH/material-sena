@@ -1,0 +1,35 @@
+<input id="day" type="text" [(ngModel)]="day">
+
+<div [ngSwitch]="day">
+  <p *ngSwitchCase="'Lunes'">
+    Nueva semana, nuevas oportunidades.
+  </p>
+
+  <p *ngSwitchCase="'Martes'">
+    Mantén el ritmo y sigue avanzando.
+  </p>
+
+  <p *ngSwitchCase="'Miércoles'">
+    Ya estás a mitad de semana.
+  </p>
+
+  <p *ngSwitchCase="'Jueves'">
+    El esfuerzo constante trae resultados.
+  </p>
+
+  <p *ngSwitchCase="'Viernes'">
+    Buen trabajo, el descanso se acerca.
+  </p>
+
+  <p *ngSwitchCase="'Sábado'">
+    Aprovecha el día para descansar o aprender algo nuevo.
+  </p>
+
+  <p *ngSwitchCase="'Domingo'">
+    Organiza tu semana y recarga energías.
+  </p>
+
+  <p *ngSwitchDefault>
+    Hoy es un buen día para empezar.
+  </p>
+</div>
