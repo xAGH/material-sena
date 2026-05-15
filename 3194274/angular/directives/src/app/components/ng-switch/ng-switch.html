@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="day">
+
+<div [ngSwitch]="day">
+  <p *ngSwitchCase="'lunes'">El día de hoy es lunes</p>
+  <p *ngSwitchCase="'martes'">El día de hoy es martes</p>
+  <p *ngSwitchCase="'miércoles'">El día de hoy es miércoles</p>
+  <p *ngSwitchCase="'jueves'">El día de hoy es jueves</p>
+  <p *ngSwitchCase="'viernes'">El día de hoy es viernes</p>
+  <p *ngSwitchCase="'sábado'">El día de hoy es sábado</p>
+  <p *ngSwitchCase="'domingo'">El día de hoy es domingo</p>
+  <p *ngSwitchDefault>Ese día no existe</p>
+</div>

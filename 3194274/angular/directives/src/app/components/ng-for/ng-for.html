@@ -1,0 +1,11 @@
+<h1>Ususarios:</h1>
+
+<p *ngFor="let user of users; let i = index">
+  {{i + 1}}. {{ user.name }}
+</p>
+
+<!-- @for (user of users; track $index) {
+<p>
+  {{ user.name }}
+</p>
+} -->
