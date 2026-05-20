@@ -1,0 +1,23 @@
+<button (click)="toggle()" [disabled]="estado === 'cargando'">
+  {{ !mostrar ? 'Cargar' : "Borrar"}}
+</button>
+
+<div *ngIf="mostrar; else vacio">
+  <ul>
+    <li *ngFor="let item of items;">
+      {{ item }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #vacio>
+  <p>No hay datos</p>
+</ng-template>
+
+<hr>
+
+<div [ngSwitch]="estado">
+  <p *ngSwitchCase="'cargando'">Cargando...</p>
+  <p *ngSwitchCase="'exito'">Listo</p>
+  <p *ngSwitchDefault>Pendiente...</p>
+</div>
