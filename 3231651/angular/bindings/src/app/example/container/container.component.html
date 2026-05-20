@@ -1,0 +1,14 @@
+<div class="container">
+  <app-square [color]="currentColor" />
+  <span>{{ colorName }}</span>
+  <div class="buttons">
+    <app-color-button (changeColor)="onChangeColor($event, 'Turquesa')" color="Turquesa" colorCode="#40E0D0" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Naranja')" color="Naranja" colorCode="#FFA500" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Azul')" color="Azul" colorCode="#0000FF" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Esmeralda')" color="Esmeralda" colorCode="#50C878" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Negro')" color="Negro" colorCode="#000000" />
+    <app-color-button (changeColor)="onChangeColor($event, 'Blanco')" color="Blanco" colorCode="#FFFFFF" />
+  </div>
+  <button (click)="onClick($event)">CLICK</button>
+  <button (mouseenter)="onClick($event)">MOUSENETER</button>
+</div>
