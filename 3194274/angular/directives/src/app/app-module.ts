@@ -1,8 +1,4 @@
-import {
-  NgModule,
-  provideBrowserGlobalErrorListeners,
-  provideZonelessChangeDetection,
-} from '@angular/core';
+import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
@@ -14,7 +10,7 @@ import { NgSwitch } from './components/ng-switch/ng-switch';
 @NgModule({
   declarations: [App, NgIf, NgFor, NgSwitch],
   imports: [BrowserModule, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners(), provideZonelessChangeDetection()],
+  providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
 export class AppModule {}
