@@ -1,0 +1,51 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-info {
+  h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #111827;
+  }
+
+  p {
+    margin: 0.3rem 0 0.8rem;
+    color: #6b7280;
+    font-size: 0.95rem;
+  }
+}
+
+.role {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

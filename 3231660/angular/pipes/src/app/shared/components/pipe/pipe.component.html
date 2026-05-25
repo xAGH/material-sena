@@ -1,0 +1,13 @@
+<p>{{ name | uppercase}}</p>
+<p>{{ lastname | lowercase}}</p>
+<p>{{ (name + " " + lastname) | titlecase}}</p>
+<!-- Parametros de number:"x.y-z" donde:
+  x: numero mínimo de enteros
+  y: numero mínimo de decimales
+  z: numero máximo de decimales
+-->
+<p>{{ experiment | number:"10.2-6"}}</p>
+<p>{{ money | currency:"EUR":"symbol":"10.2-6" }}</p>
+<p>{{ owe | currency }}</p>
+<p>{{ money | percent}}</p>
+<p>{{ brithDate | date:"long" }}</p>

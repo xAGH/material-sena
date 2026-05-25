@@ -1,0 +1,24 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1>Iniciar sesión</h1>
+    <p>Ingresa tus credenciales para continuar</p>
+
+    <form>
+      <div class="form-group">
+        <label for="username">Usuario</label>
+        <input [(ngModel)]="user" [ngModelOptions]="{ standalone: true }" type="text" id="username"
+          placeholder="Ingresa tu usuario" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input [(ngModel)]="password" [ngModelOptions]="{ standalone: true }" type="password" id="password"
+          placeholder="Ingresa tu contraseña" />
+      </div>
+
+      <button (click)="onClick()" type="submit">
+        Ingresar
+      </button>
+    </form>
+  </div>
+</div>
