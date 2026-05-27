@@ -1,0 +1,44 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  margin: 0;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.email {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}

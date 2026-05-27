@@ -1,0 +1,5 @@
+<app-login *ngIf="!isAuth; else userList"></app-login>
+
+<ng-template #userList>
+  <app-user-list [users]="users"></app-user-list>
+</ng-template>
