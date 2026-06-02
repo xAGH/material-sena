@@ -52,12 +52,21 @@ public class UserController {
     public User create(@RequestBody UserDto body) {
 
         // Se crea una nueva instancia de User con los datos recibidos
-        User user = new User(
-                null,
-                body.getName(),
-                body.getEmail(),
-                body.getAge(),
-                body.getPhone());
+        /*
+         * User user = new User(
+         * null,
+         * body.getName(),
+         * body.getEmail(),
+         * body.getAge(),
+         * body.getPhone());
+         */
+
+        User user = new User();
+
+        user.setName(body.getName());
+        user.setEmail(body.getEmail());
+        user.setAge(body.getAge());
+        user.setPhone(body.getPhone());
 
         return this.service.crear(user);
     }
@@ -68,12 +77,21 @@ public class UserController {
 
         // Se crea una instancia de User con el id recibido
         // y los nuevos datos enviados en el body
-        User user = new User(
-                id,
-                body.getName(),
-                body.getEmail(),
-                body.getAge(),
-                body.getPhone());
+        /*
+         * User user = new User(
+         * id,
+         * body.getName(),
+         * body.getEmail(),
+         * body.getAge(),
+         * body.getPhone());
+         */
+
+        User user = new User();
+
+        user.setName(body.getName());
+        user.setEmail(body.getEmail());
+        user.setAge(body.getAge());
+        user.setPhone(body.getPhone());
 
         User userUptaded = this.service.actualizar(user);
 

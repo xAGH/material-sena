@@ -1,15 +1,20 @@
 package com.sena.database_connection.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "users")
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class User {
@@ -26,4 +31,13 @@ public class User {
 
     private String phone;
 
+    @OneToOne(mappedBy = "user")
+    private Profile profile;
+
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
+
+    @ManyToMany
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roles;
 }
