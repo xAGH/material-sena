@@ -6,6 +6,8 @@ abstract class Database {
 
     abstract void save(String data);
 
+    abstract void save (String data, String table);
+
 }
 
 class MySQLDatabase extends Database {
