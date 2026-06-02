@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './features/auth/services/auth.service';
 
 @Component({
   standalone: false,
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private authService: AuthService) {}
+
+  get isAuth() {
+    return this.authService.isAuth;
+  }
+}

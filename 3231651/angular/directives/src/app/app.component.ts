@@ -7,20 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'fundamentos';
-  inputType = 'number';
-  sugar = '';
+  isAuth = true;
 
-  onClick() {
-    console.log('Se hizo click');
-    console.log('sugar tiene el valor: ', this.sugar);
-  }
+  users = [
+    { name: 'Alejo', age: 23 },
+    { name: 'Pepe', age: 50 },
+    { name: 'Juan', age: 18 },
+    { name: 'Sutano', age: 30 },
+  ];
 
-  onMouseLeave() {
-    console.log('Salió el mouse');
-  }
-
-  onMouseEnter() {
-    console.log('Entró el mouse');
-  }
+  day = 'Lunes';
 }

@@ -1,0 +1,17 @@
+Directivas
+Las directivas son clases que añaden comportamiento,
+modifican la apariencia o alteran la estructura del DOM.
+
+Tipos:
+- Estructurales: Son directivas que permiten modificar
+la estructura del DOM.
+  - *ngIf
+  - *ngFor
+  - *ngSwitch, *ngSwitchCase, *ngSwitchDefault
+
+- Atributos: Son directivas que permiten trabajar con atributos.
+  - [ngClass]
+  - [ngStyle]
+
+- Componentes: Son directivas con diseño, estilo y lógica.
+  - <app-x></app-x>

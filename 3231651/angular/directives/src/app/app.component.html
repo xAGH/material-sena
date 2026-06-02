@@ -1,18 +1,45 @@
-<!-- Interpolación -> {{ <expresion> }}
-<h1>{{ inputType }}</h1>
+<h1 *ngIf="isAuth; else noEstaAuth">
+  Estas logueado
+</h1>
 
-Property binding -> [propiedad]="<expresion>"
-<input [type]="inputType" [name]="1 + 1 - 7 / 2 * 10" />
+<ng-template #noEstaAuth>
+  <h1>
+    Debes iniciar sesión
+  </h1>
+</ng-template>
 
-<br><br>
-Event binding -> (evento)="funcion()"
-<button (click)="onClick()">Click me</button>
+<!--
+SOLO DISPONIBLE EN VERSIONES MODERNAS 16=<
+@if (isAuth) {
+<h1>
+  Estas logueado
+</h1>
+} @else {
+<h1>
+  Debes iniciar sesión
+</h1>
+}
+ -->
 
-<br><br>
-ngModel -> Binding bidireccional
-<input type="text" [(ngModel)]="sugar">
-<br>
-<span>{{ sugar }}</span>
--->
+<div *ngFor="let user of users; let i = index">
+  <p>{{ i }}</p>
+  <p>{{ user.name }}</p>
+  <p>{{ user.age }}</p>
+</div>
 
-<app-counter />
+<!--
+SOLO DISPONIBLE EN VERSIONES MODERNAS 16=<
+@for (user of users; track $index) {
+<div>
+  <p>{{ $index }}</p>
+  <p>{{ user.name }}</p>
+  <p>{{ user.age }}</p>
+</div>
+}
+ -->
+
+<span [ngSwitch]="day">
+  <span *ngSwitchCase="'Lunes'">Hoy es Lunes</span>
+  <span *ngSwitchCase="'Martes'">Hoy es Martes</span>
+  <span *ngSwitchDefault>Este día no existe</span>
+</span>
