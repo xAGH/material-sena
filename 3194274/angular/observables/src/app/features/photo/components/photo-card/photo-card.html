@@ -1,0 +1,18 @@
+<div class="photo-card">
+  <img [src]="photo.thumbnailUrl" [alt]="photo.title" class="photo-card__image" />
+
+  <div class="photo-card__content">
+    <h3 class="photo-card__title">
+      {{ photo.title }}
+    </h3>
+
+    <div class="photo-card__info">
+      <span>ID: {{ photo.id }}</span>
+      <span>Álbum: {{ photo.albumId }}</span>
+    </div>
+
+    <a [href]="photo.url" target="_blank" rel="noopener noreferrer" class="photo-card__button">
+      Ver imagen completa
+    </a>
+  </div>
+</div>

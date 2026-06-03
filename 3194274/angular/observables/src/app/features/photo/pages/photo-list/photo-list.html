@@ -1,0 +1,13 @@
+<section class="photo-list">
+
+  <header class="photo-list__header">
+    <h2>Galería de Fotos</h2>
+    <span>{{ photos.length }} resultados</span>
+  </header>
+
+  <div class="photo-list__grid">
+    <app-photo-card *ngFor="let photo of photos" [photo]="photo">
+    </app-photo-card>
+  </div>
+
+</section>

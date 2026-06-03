@@ -1,0 +1,30 @@
+.photo-list {
+  padding: 1.5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    span {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fill,
+        minmax(350px, 1fr));
+  }
+}
