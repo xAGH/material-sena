@@ -1,0 +1,36 @@
+<div class="users-container">
+  <div class="user-card" *ngFor="let user of (users$ | async)">
+    <div class="user-card__header">
+      <h3>{{ user.name }}</h3>
+      <span>{{'@'}}{{ user.username }}</span>
+    </div>
+
+    <div class="user-card__body">
+      <p>
+        <strong>Email:</strong>
+        {{ user.email }}
+      </p>
+
+      <p>
+        <strong>Teléfono:</strong>
+        {{ user.phone }}
+      </p>
+
+      <p>
+        <strong>Empresa:</strong>
+        {{ user.companyName }}
+      </p>
+
+      <p>
+        <strong>Ciudad:</strong>
+        {{ user.address.city }}
+      </p>
+
+      <p>
+        <strong>Dirección:</strong>
+        {{ user.address.street }},
+        {{ user.address.suite }}
+      </p>
+    </div>
+  </div>
+</div>
