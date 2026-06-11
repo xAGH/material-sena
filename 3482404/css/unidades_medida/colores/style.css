@@ -1,0 +1,15 @@
+.texto {
+  color: red;
+}
+
+.rgb {
+  color: rgb(160, 55, 55);
+}
+
+.hsl {
+  color: hsla(180, 10%, 79%);
+}
+
+.hex {
+  color: #ff0000;
+}

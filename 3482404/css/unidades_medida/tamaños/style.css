@@ -1,0 +1,32 @@
+.px {
+  font-size: 40px;
+  border: 2px black dotted;
+  border-radius: 50%;
+}
+
+.em {
+  font-size: 1em;
+}
+
+.rem {
+  font-size: 2rem;
+}
+
+.percent {
+  font-size: 50%;
+}
+
+.vw {
+  font-size: 50vw;
+}
+
+.vh {
+  font-size: 15vh;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border: rgb(235, 231, 123) solid 1px;
+  border-radius: 50%;
+}
