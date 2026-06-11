@@ -1,0 +1,30 @@
+* {
+  border: 1px solid black;
+}
+
+h1 {
+  color: red !important;
+}
+
+#h1-hola {
+  color: blue;
+}
+
+.prepucini {
+  color: green;
+}
+
+.isla {
+  font-size: 4rem;
+  font-style: italic;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 100;
+}
+
+.otro {
+  color: pink;
+}
+
+#otro {
+  color: aqua;
+}
