@@ -1,3 +1,10 @@
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 export interface User {
   id: number;
   name: string;
@@ -10,4 +17,5 @@ export interface User {
   };
   phone: string;
   companyName: string;
+  posts: Post[];
 }
