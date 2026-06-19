@@ -1,0 +1,12 @@
+<section class="user-list">
+  <ng-container *ngIf="users && users.length > 0; else emptyState">
+    <app-user-card *ngFor="let user of users" [user]="user">
+    </app-user-card>
+  </ng-container>
+
+  <ng-template #emptyState>
+    <p class="user-list__empty">
+      No hay usuarios disponibles.
+    </p>
+  </ng-template>
+</section>

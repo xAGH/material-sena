@@ -1,0 +1,39 @@
+<article class="user-card">
+  <header class="user-card__header">
+    <h3>{{ user.name }}</h3>
+    <span>{{ '@' + user.username }}</span>
+  </header>
+
+  <div class="user-card__content">
+    <p>
+      <strong>Email:</strong>
+      {{ user.email }}
+    </p>
+
+    <p>
+      <strong>Teléfono:</strong>
+      {{ user.phone }}
+    </p>
+
+    <p>
+      <strong>Publicaciones:</strong>
+      {{ user.postsQuantity }}
+    </p>
+
+    <p>
+      <strong>Ciudad:</strong>
+      {{ user.address.city }}
+    </p>
+
+    <p>
+      <strong>Dirección:</strong>
+      {{ user.address.street }}
+    </p>
+
+    <p>
+      <strong>Empresa:</strong>
+      {{ user.companyName }}
+    </p>
+
+  </div>
+</article>

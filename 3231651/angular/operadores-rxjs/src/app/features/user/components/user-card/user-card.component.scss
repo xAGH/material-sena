@@ -1,0 +1,38 @@
+.user-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-card__header {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+}
+
+.user-card__header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.user-card__header span {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.user-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-card__content p {
+  margin: 0;
+  line-height: 1.4;
+}
