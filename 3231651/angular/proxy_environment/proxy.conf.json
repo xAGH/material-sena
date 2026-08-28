@@ -1,0 +1,7 @@
+{
+  "/posts": {
+    "target": "https://jsonplaceholder.typicode.com/posts",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

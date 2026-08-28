@@ -62,9 +62,13 @@
         <small class="error" *ngIf="isInvalid('password', 'minlength')">
           La contraseña debe tener al menos 8 caracteres.
         </small>
+
+        <small class="error" *ngIf="isInvalid('password', 'pattern')">
+          La contraseña debe tener al menos 1 letra mayúscula, 1 minúscula, 1 número y 1 caracter especial.
+        </small>
       </div>
 
-      <button (click)="onClick()" type="submit">
+      <button (click)="onClick()" type="submit" [disabled]="form.invalid">
         Registrarse
       </button>
     </form>

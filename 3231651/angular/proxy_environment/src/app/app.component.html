@@ -1,0 +1,13 @@
+<div class="app-container">
+
+  <header class="toolbar">
+    <h1>Gestión de Publicaciones</h1>
+
+    <button (click)="onClick()" class="load-posts-btn">
+      Cargar publicaciones
+    </button>
+  </header>
+
+  <app-post-list [posts]="posts"></app-post-list>
+
+</div>

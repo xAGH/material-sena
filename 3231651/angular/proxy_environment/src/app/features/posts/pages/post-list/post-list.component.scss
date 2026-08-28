@@ -1,0 +1,44 @@
+.post-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2rem;
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #111827;
+    }
+
+    span {
+      color: #6b7280;
+      font-weight: 500;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+
+    grid-template-columns: repeat(auto-fill,
+        minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .post-list {
+    padding: 1rem;
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+}

@@ -24,7 +24,16 @@ export class RegisterFormComponent {
         [Validators.required, Validators.min(1), Validators.max(120)],
       ],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern(
+            /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+/,
+          ),
+        ],
+      ],
     });
   }
 

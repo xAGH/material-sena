@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Sticky</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: #2563eb;
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: 2rem;
+            height: 100vh;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Soy un header sticky 👋
+    </header>
+
+    <section>
+        <h2>Sección 1</h2>
+        <p>Haz scroll para ver el efecto.</p>
+    </section>
+
+    <section>
+        <h2>Sección 2</h2>
+        <p>El encabezado permanece visible arriba.</p>
+    </section>
+
+    <section>
+        <h2>Sección 3</h2>
+        <p>Sticky solo funciona mientras su contenedor exista.</p>
+    </section>
+
+</body>
+
+</html>

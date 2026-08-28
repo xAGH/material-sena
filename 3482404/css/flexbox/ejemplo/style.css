@@ -1,0 +1,61 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Roboto, "sans-serif";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    height: 300px;
+    width: 200px;
+    background-color: rgb(255, 255, 140);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.img-container {
+    width: 180px;
+    background-color: white;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 20px;
+}
+
+.shoe-img {
+    width: 100%;
+    height: auto;
+}
+
+.buy-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 16px;
+    background-color: rgb(188, 250, 188);
+}
+
+.buy-btn:hover {
+    background-color: rgb(149, 251, 149);
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.move {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}

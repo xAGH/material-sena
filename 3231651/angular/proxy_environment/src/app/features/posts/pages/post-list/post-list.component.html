@@ -1,0 +1,13 @@
+<section class="post-list">
+
+  <header class="post-list__header">
+    <h1>Publicaciones</h1>
+    <span>{{ posts.length }} resultados</span>
+  </header>
+
+  <div class="post-list__grid">
+    <app-post-card *ngFor="let item of posts" [post]="item">
+    </app-post-card>
+  </div>
+
+</section>

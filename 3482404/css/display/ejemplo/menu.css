@@ -1,0 +1,129 @@
+/* css/display.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 1rem;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    padding: 1rem;
+    color: white;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Ejemplos de display */
+.inline {
+    background: #3498db;
+    color: white;
+    padding: 0.2rem 0.5rem;
+}
+
+.inline-block {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 0 5px;
+}
+
+.block {
+    display: block;
+    background: #27ae60;
+    color: white;
+    width: 200px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Ocultamiento */
+.oculto-display {
+    display: none;
+    /* No aparece ni ocupa espacio */
+}
+
+.oculto-visibility {
+    visibility: hidden;
+    /* Ocupa espacio pero no se ve */
+    height: 60px;
+    background: #f1c40f;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.visible {
+    background: #9b59b6;
+    color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Responsive: ocultar menú en móvil */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        /* Oculta menú */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2c3e50;
+    }
+
+    .menu.active {
+        display: flex;
+        /* Muestra al hacer clic */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display y Visibilidad</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navegacion">
+            <div class="logo">MiSitio</div>
+            <button class="menu-toggle">Menú</button>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Prueba los valores de display</h1>
+        <p>
+            <span class="inline">inline</span>
+            <span class="inline-block">inline-block</span>
+            <span class="block">block</span>
+        </p>
+
+        <div class="caja oculto-display">display: none → No existo</div>
+        <div class="caja oculto-visibility">visibility: hidden → Estoy pero no me ves</div>
+        <div class="caja visible">Soy visible</div>
+    </main>
+</body>
+
+</html>
