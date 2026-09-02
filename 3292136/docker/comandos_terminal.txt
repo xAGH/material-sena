@@ -1,0 +1,12 @@
+pwd -> Print Working Directory
+ls -> Listar archivos
+ls -a -> Listar TODOS los archivos
+ls -l -> Listar los archivos e incluir detalle
+cd -> Change Directory
+touch <nombre_archivo> -> Crea un archivo
+vi -> Editor de texto en terminal (vim, nvim)
+echo "<texto>" -> Imprime algo en terminal
+cat -> Obtiene el contenido de un archivo
+> -> Redirige la salida de un comando a un archivo y lo sobreescribe
+>> -> Redirige la salida de un comando a un archivo y lo agrega en una nueva línea
+
