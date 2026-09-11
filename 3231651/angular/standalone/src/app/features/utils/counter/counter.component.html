@@ -1,0 +1,26 @@
+<span> Counter: {{ counter() }} </span>
+<br>
+<span> Doubled: {{ doubled() }} </span>
+
+@if(counter()===10) {
+<span>¡Llegaste a 10!</span>
+} @else if (counter() ===20) {
+<span>¡Llegaste a 20!</span>
+}@else{
+<span>Aun no llegas a 10</span>
+}
+
+
+<span>{{ log() }} </span>
+
+<br>
+<button (click)="up()">Aumentar</button>
+<br>
+<button (click)="down()">Decrementar</button>
+
+<br>
+@for (fruit of fruits; track $index) {
+<span>{{fruit}}</span>
+} @empty {
+<span>No hay frutas</span> <button (click)="add()">Agregar</button>
+}
