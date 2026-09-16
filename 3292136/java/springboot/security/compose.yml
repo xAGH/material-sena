@@ -1,0 +1,26 @@
+services:
+  api:
+    image: xagh/test
+    ports:
+      - "3000:8080"
+    env_file:
+      - .env
+    # environment:
+    #   - DATABASE_URL=jdbc:h2:mem:securitydb
+    #   - DATABSE_USER=sa
+    #   - DATABASE_PASSWORD=
+    #   - JWT_SECRET=c5195418c345e0770cc49c8b3ee7cb5b
+
+  test_database:
+    image: mysql:8
+    environment:
+      - MYSQL_USER=test-136
+      - MYSQL_PASSWORD=test-136
+      - MYSQL_DATABASE=test-136
+    expose:
+      - 3306
+    volumes:
+      - mysql_test_data:/var/lib/mysql
+
+volumes:
+  mysql_test_data:
