@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web</title>
+
+    <style>
+        /* =========================
+           ESTILOS GENERALES
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            margin-bottom: 15px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav a {
+            color: white;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        /* =========================
+           CONTENIDO PRINCIPAL
+        ========================= */
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #inicio {
+            text-align: center;
+        }
+
+        #inicio p {
+            margin-bottom: 25px;
+            color: #64748b;
+        }
+
+        figure {
+            margin-top: 20px;
+        }
+
+        figure img {
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* =========================
+           BLOG
+        ========================= */
+
+        #blog {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        #blog h2 {
+            grid-column: 1 / -1;
+        }
+
+        article {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background-color: #f8fafc;
+        }
+
+        article h3 {
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        article small {
+            color: #64748b;
+        }
+
+        article p {
+            margin: 15px 0;
+        }
+
+        article footer {
+            margin-top: 15px;
+        }
+
+        article footer a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        article footer a:hover {
+            background-color: #1d4ed8;
+            text-decoration: none;
+        }
+
+        /* =========================
+           BARRA LATERAL
+        ========================= */
+
+        aside {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 25px;
+            background-color: #e0f2fe;
+            border-left: 5px solid #0284c7;
+            border-radius: 6px;
+        }
+
+        aside h3 {
+            margin-bottom: 8px;
+            color: #075985;
+        }
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        body>footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        body>footer nav {
+            margin-top: 8px;
+        }
+
+        body>footer a {
+            color: #93c5fd;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 20px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            main {
+                margin-top: 20px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            #blog {
+                grid-template-columns: 1fr;
+            }
+
+            #blog h2 {
+                grid-column: auto;
+            }
+
+            figure img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Mi Sitio Web</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- SECCIÓN HERO -->
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+
+            <p>
+                El mejor lugar para aprender HTML semántico.
+            </p>
+
+            <figure>
+                <img src="hero.jpg" alt="Equipo trabajando">
+                <figcaption>Nuestro equipo en acción</figcaption>
+            </figure>
+        </section>
+
+        <!-- SECCIÓN BLOG -->
+        <section id="blog">
+
+            <h2>Últimas entradas</h2>
+
+            <article>
+                <header>
+                    <h3>HTML5 Semántico</h3>
+                    <p>
+                        <small>Por Ana, 15 abril 2025</small>
+                    </p>
+                </header>
+
+                <p>
+                    Aprende a estructurar mejor tu código...
+                </p>
+
+                <footer>
+                    <a href="#">Leer más</a>
+                </footer>
+            </article>
+
+            <article>
+                <h3>Accesibilidad en formularios</h3>
+
+                <p>
+                    Mejora la experiencia de todos los usuarios...
+                </p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- BARRA LATERAL -->
+    <aside>
+        <h3>Sobre el autor</h3>
+        <p>Diseñador web con 10 años de experiencia.</p>
+    </aside>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web</p>
+
+        <nav>
+            <a href="#privacidad">Privacidad</a> |
+            <a href="#terminos">Términos</a>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
