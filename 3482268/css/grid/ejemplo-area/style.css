@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr repeat(2, 2fr);
+    padding: 2rem;
+    gap: 1rem;
+
+    grid-template-areas:
+        "header header"
+        "aside section1"
+        "aside section2";
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: aside;
+}
+
+.border-2 {
+    border: 2px solid black;
+    border-radius: 24px;
+}
