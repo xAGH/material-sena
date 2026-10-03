@@ -1,0 +1,3 @@
+npm init -y = Inicializar un proyecto de node.
+npm install typescript = Instala la dependencia de TS.
+npx tsc --init = Genera el archivo de configuración de TS.

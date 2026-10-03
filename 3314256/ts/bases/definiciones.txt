@@ -1,0 +1,6 @@
+node = Motor para ejecutar javascript en el servidor
+npm = Node Package Manager
+npx = Node Package Executor
+tsc = Typescript compiler
+es = EcmaScript
+Type Narrowing = El estrechamiento de tipos (type narrowing) en TypeScript es el proceso mediante el cual el compilador reduce un tipo de dato amplio (como una unión de string | number) a uno más específico dentro de un bloque de código condicional.

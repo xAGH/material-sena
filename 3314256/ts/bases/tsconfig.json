@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "./",
+    "module": "nodenext", // Tipo de módulo
+    "target": "esnext", // A qué version de JavaScript (EcmaScript) se transpilará el TS.
+    "types": [], // Define los tipos de TS a tener en cuenta de dependencias de bajo nivel (como node).
+
+    // Tiene relación con la especificación de generación de tipos al transpilar a JS.
+    "sourceMap": false,
+    "declaration": false,
+    "declarationMap": false,
+
+    // No permite indeces no comprobados
+    "noUncheckedIndexedAccess": true,
+    // Se debe indicar los tipos de las propiedades opcionales
+    "exactOptionalPropertyTypes": true,
+
+    // Qué tan estricto es con los tipos el compilador de TS.
+    "strict": true,
+    // Homologa una extensión de archivo de una librería de react.
+    "jsx": "react-jsx",
+
+    // Configuración de módulos
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  }
+}
