@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    color: gray;
+
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    background-color: rgb(202, 230, 255);
+    cursor: pointer;
+}
+
+button:active {
+    /* Mueve el elemento en el eje x & y */
+    /* transform: translate(100deg); */
+
+    /* Rota el elemento x grados (deg) */
+    /* transform: rotate(100deg); */
+
+    /* Escala el elemento en base a 1 */
+    /* transform: scale(2); */
+
+    /* Inclina tanto en x como en y */
+    /* transform: skew(90deg); */
+}
