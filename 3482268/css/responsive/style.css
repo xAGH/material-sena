@@ -1,0 +1,81 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.square {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+}
+
+.square:hover {
+    opacity: 0.5;
+}
+
+.lorem {
+    font-size: 1.5rem;
+    color: blue;
+}
+
+/* Operador lógico y (and) */
+@media screen and (max-width: 600px) {
+    .square {
+        width: 250px;
+        height: 250px;
+        background-color: blue;
+    }
+}
+
+/* Operador lógico or (,) */
+@media (min-width:700px),
+(max-width: 900px) {
+    .square {
+        width: 500px;
+        height: 500px;
+        background-color: black;
+    }
+}
+
+/* Operador de negación (not) */
+@media not print {
+    .square {
+        width: 500px;
+        height: 500px;
+        background-color: black;
+    }
+}
+
+/* Solo se cumple en dispositivos que pueden renderizar hover */
+@media (hover) {}
+
+/* Solo se cumple en dispositivos que pueden renderizar color */
+@media (color) {}
+
+/* Condiciones de modo */
+/* Pantallas normales (móvil, tablets, computador, televisor, etc) */
+@media screen {}
+
+/* Modo de impresión */
+@media print {
+    .lorem {
+        font-size: 3rem;
+        color: red;
+    }
+}
+
+/* Modo de lectura en voz alta */
+@media speech {}
+
+@media (orientation: landscape) {
+    .square {
+        background-color: purple;
+    }
+}
+
+@media (orientation: portrait) {
+    .square {
+        background-color: green;
+    }
+}

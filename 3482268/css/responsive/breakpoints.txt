@@ -1,0 +1,8 @@
+Móvil	hasta 599px
+Tablet	600px – 899px
+Escritorio	900px – 1199px
+Pantalla grande	1200px o más
+
+
+Mobile First -> Primero los estilos para teléfono y pantallas
+pequeñas y con media queries se agregan estilos a pantallas grandes
