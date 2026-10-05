@@ -1,0 +1,80 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.parent {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+}
+
+.children {
+    width: 100px;
+    height: 100px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.parent:hover {
+    background-color: brown;
+}
+
+input:focus {
+    border: blue 2px solid;
+    outline: none;
+}
+
+button:active {
+    background-color: blue;
+    scale: 1.1;
+}
+
+li:nth-child(3) {
+    background-color: red;
+}
+
+li:nth-child(odd) {
+    background-color: blue;
+}
+
+li:nth-child(even) {
+    background-color: green;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(170, 170, 170);
+}
+
+/* Selecciona el primer elemento hijo :nth-child(1) */
+tr:nth-first-child {}
+
+/* Selecciona el último elemento hijo :nth-child(final) */
+tr:nth-last-child {}
+
+input:not([type="number"]) {
+    background-color: purple;
+}
+
+input:checked+label {
+    font-size: 2.5rem;
+    color: green;
+}
