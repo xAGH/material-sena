@@ -1,0 +1,15 @@
+<section class="products">
+  <h2>Productos</h2>
+
+  @if (loading()) {
+  <app-loading />
+  } @else if (error(); as message) {
+  <app-error-message [message]="message" />
+  } @else {
+  <div class="grid">
+    @for (product of products(); track product.id) {
+    <app-product-card [product]="product" />
+    }
+  </div>
+  }
+</section>

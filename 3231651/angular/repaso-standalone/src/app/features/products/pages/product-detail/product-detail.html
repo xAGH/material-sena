@@ -1,0 +1,14 @@
+<section class="detail">
+  <a routerLink="/products">← Volver</a>
+
+  @if (loading()) {
+    <app-loading />
+  } @else if (error(); as message) {
+    <app-error-message [message]="message" />
+  } @else if (product(); as p) {
+    <img [src]="p.thumbnail" [alt]="p.title" />
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.description }}</p>
+    <p><strong>{{ p.price | currency }}</strong> · {{ p.category }} · Stock: {{ p.stock }}</p>
+  }
+</section>

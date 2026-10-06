@@ -1,0 +1,13 @@
+<header class="navbar">
+  <div class="navbar__inner">
+    <a class="navbar__brand" routerLink="/products">🛍️ Catálogo</a>
+
+    @if (user(); as u) {
+      <div class="navbar__user">
+        <img class="navbar__avatar" [src]="u.image" [alt]="u.firstName" />
+        <span class="navbar__name">Hola, {{ u.firstName }}</span>
+        <button type="button" (click)="logout()" class="btn btn--ghost">Cerrar sesión</button>
+      </div>
+    }
+  </div>
+</header>

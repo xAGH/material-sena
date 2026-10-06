@@ -1,0 +1,137 @@
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+
+  &__back {
+    font-weight: 500;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__category {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  &__rating {
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-star);
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+
+    strong {
+      font-size: 2rem;
+    }
+  }
+
+  &__discount {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-success);
+    background: rgb(22 163 74 / 10%);
+    border-radius: 999px;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    span {
+      display: inline-block;
+      min-width: 70px;
+      font-weight: 600;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__tag {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    background: rgb(79 70 229 / 8%);
+    border-radius: 999px;
+  }
+}
+
+.reviews {
+  margin-top: 2rem;
+
+  &__item {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    p {
+      margin: 0.4rem 0;
+    }
+
+    small {
+      color: var(--color-muted);
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    font-weight: 600;
+    color: var(--color-star);
+  }
+}
+
+@media (max-width: 720px) {
+  .detail {
+    grid-template-columns: 1fr;
+  }
+}

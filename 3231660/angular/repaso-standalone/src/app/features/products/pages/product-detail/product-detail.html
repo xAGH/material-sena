@@ -1,0 +1,46 @@
+<app-navbar />
+
+<main class="container">
+  <a class="detail__back" routerLink="/products">← Volver a productos</a>
+
+  <article class="detail">
+    <img class="detail__image" [src]="product.thumbnail" [alt]="product.title" />
+
+    <div class="detail__info">
+      <span class="detail__category">{{ product.category }} · {{ product.brand }}</span>
+      <h1 class="detail__title">{{ product.title }}</h1>
+      <p class="detail__rating">★ {{ product.rating }}</p>
+      <p class="detail__description">{{ product.description }}</p>
+
+      <div class="detail__price">
+        <strong>${{ product.price }}</strong>
+        <span class="detail__discount">-{{ product.discountPercentage }}%</span>
+      </div>
+
+      <ul class="detail__meta">
+        <li><span>SKU</span> {{ product.sku }}</li>
+        <li><span>Stock</span> {{ product.stock }} unidades</li>
+      </ul>
+
+      <div class="detail__tags">
+        @for (tag of product.tags; track tag) {
+        <span class="detail__tag">#{{ tag }}</span>
+        }
+      </div>
+    </div>
+  </article>
+
+  <section class="reviews">
+    <h2>Reseñas ({{ product.reviews.length }})</h2>
+    @for (review of product.reviews; track review.reviewerName) {
+    <div class="reviews__item">
+      <div class="reviews__head">
+        <strong>{{ review.reviewerName }}</strong>
+        <span class="reviews__stars">★ {{ review.rating }}</span>
+      </div>
+      <p>{{ review.comment }}</p>
+      <small>{{ review.date }}</small>
+    </div>
+    }
+  </section>
+</main>

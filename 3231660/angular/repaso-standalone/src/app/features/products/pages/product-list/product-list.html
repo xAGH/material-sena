@@ -1,0 +1,38 @@
+<app-navbar />
+
+<main class="container">
+  <header class="list__header">
+    <div>
+      <h1 class="list__title">Productos</h1>
+      <p class="list__count">{{ total() }} productos disponibles</p>
+    </div>
+    <input class="input list__search" type="search" placeholder="Buscar producto..." />
+  </header>
+
+  <section class="list__grid">
+    @if (loading()) {
+    <p>Cargando productos...</p>
+    } @else if (error()) {
+    <p class="list__error">{{ error() }}</p>
+    }
+    @for (product of products(); track product.id) {
+    <a class="card" [routerLink]="[product.id]">
+      <img class="card__image" [src]="product.thumbnail" [alt]="product.title" loading="lazy" />
+      <div class="card__body">
+        <span class="card__category">{{ product.category }}</span>
+        <h2 class="card__title">{{ product.title }}</h2>
+        <div class="card__footer">
+          <strong class="card__price">${{ product.price }}</strong>
+          <span class="card__rating">★ {{ product.rating }}</span>
+        </div>
+      </div>
+    </a>
+    }
+  </section>
+
+  <nav class="list__pagination" aria-label="Paginación">
+    <button type="button" class="btn btn--ghost">← Anterior</button>
+    <span>Página 1 de 33</span>
+    <button type="button" class="btn btn--ghost">Siguiente →</button>
+  </nav>
+</main>
