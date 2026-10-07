@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* Añade texto virtual antes del real */
+/* .text::before {
+    content: "↔";
+} */
+
+
+/* Añade texto virtual después del real */
+.text::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+}
+
+.text::first-letter {
+    color: red;
+    font-size: 1.5rem;
+}
+
+.text::first-line {
+    color: blue;
+}
+
+.text::selection {
+    color: yellow;
+    background-color: gray;
+}

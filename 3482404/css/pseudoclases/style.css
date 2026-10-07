@@ -1,0 +1,66 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* Centra el cuadrado */
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.square {
+    width: 300px;
+    height: 300px;
+    background-color: green;
+}
+
+.square:hover {
+    background-color: red;
+}
+
+input:focus {
+    outline: none;
+    border: 5px dotted blue;
+}
+
+button:active {
+    scale: 0.9;
+    background-color: brown;
+}
+
+/* odd = impar ; even = par */
+tbody>tr:nth-child(odd) {
+    background-color: gray;
+}
+
+/* n = periodicidad (cada tanto); 2n = cada 2 elementos (uno si, otro no) */
+/* tr:nth-last-child(1n) {
+    background-color: red;
+} */
+
+tr:first-child {
+    background-color: red;
+}
+
+tr:last-child {
+    background-color: red;
+}
+
+input:not([type="email"]) {
+    background-color: purple;
+}
+
+button:not([disabled]) {
+    background-color: pink;
+}
+
+/* [type="checkbox"] -> filtra el input a solo los que coincidan con esa propiedad */
+input[type="checkbox"]:checked+label {
+    color: red;
+}

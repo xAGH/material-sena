@@ -1,0 +1,35 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    background-color: aliceblue;
+    cursor: pointer;
+    border: 1px solid black;
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: red;
+}
+
+button:active {
+    /* transform: translate(5rem); */
+    /* transform: scale(0.9); */
+    /* transform: rotate(180deg); */
+    transform: skew(70deg, 90deg);
+}
