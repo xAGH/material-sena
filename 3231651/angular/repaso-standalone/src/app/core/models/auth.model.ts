@@ -6,7 +6,9 @@ export interface LoginRequest {
   expiresInMins?: number;
 }
 
-export interface LoginResponse extends User {
+export interface LoginResponse {
   accessToken: string;
   refreshToken: string;
 }
+
+export interface LoginResponseWithUser extends User, LoginResponse {}
