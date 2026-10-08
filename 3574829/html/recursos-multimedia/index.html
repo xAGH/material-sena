@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos multimedia</title>
+</head>
+
+<body>
+
+    <video controls loop
+        poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOJ4IZbkwwyJD4dq7MObC7x1gpYN0xVkTOV_X9T9ZCMQ&s=10">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        Tu navegador no puede mostrar vídeos.
+    </video>
+
+    <picture>
+        <source media="(min-width: 1000px)" srcset="https://picsum.photos/id/11/1200/600">
+        <source media="(min-width: 600px)" srcset="https://picsum.photos/id/10/800/500">
+        <img src="https://picsum.photos/id/10/400/300" alt="Paisaje de bosque">
+    </picture>
+
+    <audio controls loop>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <iframe width="560" height="315"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-75.6%2C6.2%2C-75.5%2C6.3&layer=mapnik"
+        title="Mapa"></iframe>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=7jW3a8E39NxuHQHi"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</body>
+
+</html>
