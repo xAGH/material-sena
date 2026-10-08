@@ -1,0 +1,23 @@
+p {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+.hola-mundo-2 {
+    color: rgb(0, 0, 255);
+}
+
+#p-3 {
+    color: rgb(0, 255, 0);
+}
+
+p {
+    color: #0e255a;
+}
+
+.hola-mundo-2 {
+    color: #0000FF;
+}
+
+#p-3 {
+    color: #FFFF00;
+}
