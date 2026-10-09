@@ -1,0 +1,26 @@
+:root {
+    --principal-color: red;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+span {
+    color: var(--principal-colorkjdhkjdhkjdgsahjd, green);
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: var(--principal-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --principal-color: blue;
+
+    }
+}

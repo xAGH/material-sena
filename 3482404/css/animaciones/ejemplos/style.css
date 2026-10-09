@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 24px 16px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.demo {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.demo h2 {
+    font-size: .95rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.stage {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+/* ===== 1. Máquina de escribir ===== */
+.typewriter {
+    font-family: monospace;
+    font-size: 1.2rem;
+    width: 18ch;
+    /* número de caracteres del texto */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #38bdf8;
+    animation:
+        escribir 3s steps(18) infinite alternate,
+        parpadeo .7s step-end infinite;
+}
+
+@keyframes escribir {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes parpadeo {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* ===== 2. Spinner ===== */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #334155;
+    border-top-color: #38bdf8;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== 3. Puntos de carga (delay escalonado) ===== */
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dots span {
+    width: 14px;
+    height: 14px;
+    background: #a78bfa;
+    border-radius: 50%;
+    animation: rebotar .6s ease-in-out infinite alternate;
+}
+
+.dots span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.dots span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes rebotar {
+    to {
+        transform: translateY(-16px);
+        opacity: .4;
+    }
+}
+
+/* ===== 4. Latido (heartbeat) ===== */
+.heart {
+    font-size: 3rem;
+    animation: latir 1.2s ease-in-out infinite;
+}
+
+@keyframes latir {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+}
+
+/* ===== 5. Sacudida (error en formulario) ===== */
+.shake-input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid #f87171;
+    background: #0f172a;
+    color: #e2e8f0;
+    animation: sacudir .5s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes sacudir {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-8px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+/* ===== 6. Texto con degradado animado ===== */
+.gradient-text {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6, #38bdf8);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: deslizarFondo 4s linear infinite;
+}
+
+@keyframes deslizarFondo {
+    to {
+        background-position: 300% 0;
+    }
+}
+
+/* ===== 7. Tarjeta que gira en 3D (hover o tap) ===== */
+.flip {
+    width: 160px;
+    height: 100px;
+    perspective: 800px;
+    cursor: pointer;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+}
+
+.flip:hover .flip-inner,
+.flip:focus .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-face {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    font-weight: 700;
+    backface-visibility: hidden;
+}
+
+.flip-front {
+    background: #0ea5e9;
+}
+
+.flip-back {
+    background: #8b5cf6;
+    transform: rotateY(180deg);
+}
+
+/* ===== 8. Skeleton loading (shimmer) ===== */
+.skeleton {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+}
+
+.skeleton div {
+    height: 14px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+    background-size: 200% 100%;
+    animation: brillo 1.4s ease-in-out infinite;
+}
+
+.skeleton div:nth-child(2) {
+    width: 80%;
+}
+
+.skeleton div:nth-child(3) {
+    width: 60%;
+}
+
+@keyframes brillo {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== 9. Ola de letras (variable CSS --i) ===== */
+.wave span {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #34d399;
+    animation: ola 1.2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * .1s);
+}
+
+
+@keyframes ola {
+
+    0%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-14px);
+    }
+}
+
+/* ===== 10. Neón parpadeante ===== */
+.neon {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fdf4ff;
+    text-shadow: 0 0 5px #f0abfc, 0 0 15px #e879f9, 0 0 30px #d946ef;
+    animation: neon 3s infinite;
+}
+
+@keyframes neon {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: .3;
+        text-shadow: none;
+    }
+}
+
+/* ===== Accesibilidad: respetar a quien no quiere movimiento ===== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

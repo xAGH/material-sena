@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Tema claro (por defecto) */
+        :root {
+            --fondo: #ffffff;
+            --texto: #2c3e50;
+            --acento: #3498db;
+        }
+
+        /* Tema oscuro */
+        .modo-oscuro {
+            --fondo: #1a1a1a;
+            --texto: #f0f0f0;
+            --acento: #5dade2;
+        }
+
+        /* Uso global */
+        body {
+            background: var(--fondo);
+            color: var(--texto);
+            font-family: var(--fuente-principal, sans-serif);
+            padding: var(--espaciado-base);
+        }
+
+        .btn {
+            background: var(--acento);
+            padding: calc(var(--espaciado-base) * 1.5);
+            border-radius: var(--radio-bordes);
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="btn" onclick="toggle()">Cambiar modo</button>
+</body>
+
+<script>
+    const toggle = () => {
+        document.body.classList.toggle('modo-oscuro');
+    }
+</script>
+
+</html>
