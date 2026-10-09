@@ -1,0 +1,50 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.sans-serif {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 600;
+}
+
+.serif {
+    font-family: serif;
+    font-style: italic
+}
+
+.monospace {
+    font-family: monospace;
+    background-color: red;
+    line-height: 1.6;
+    letter-spacing: 0.5em;
+}
+
+.eater {
+    font-family: "Eater", serif;
+}
+
+.creepster {
+    font-family: "Creepster", serif;
+}
+
+.greeting {
+    text-transform: capitalize;
+}
+
+.minus {
+    text-transform: lowercase;
+}
+
+.mayus {
+    text-transform: uppercase;
+}
+
+.error {
+    text-decoration: double line-through;
+}
+
+.warning {
+    text-decoration: dotted underline;
+}

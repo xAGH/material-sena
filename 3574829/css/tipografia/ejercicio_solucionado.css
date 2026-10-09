@@ -1,0 +1,38 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f7f2;
+    line-height: 1.6;
+}
+
+p {
+    color: #1f2933;
+    font-size: 1.125rem;
+}
+
+h2,
+a {
+    color: #0b6e4f
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+.categoria {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+
+.autor {
+    color: rgb(231 123 89 / 0.7);
+}

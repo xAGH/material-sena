@@ -1,0 +1,29 @@
+:root {
+    --warning: yellow;
+    --yellow: yellow;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+p {
+    color: var(--warning);
+    font-size: calc(1rem * var(--index));
+}
+
+.ejemplo {
+    --warning: green;
+}
+
+* {
+    color: green
+}
+
+span {
+    color: yellow;
+}

@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        color: red;
+    }
+
+    50% {
+        color: green;
+    }
+
+    75% {
+        color: blue;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+span {
+    animation: blink 1s ease infinite alternate both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.1ms !important;
+    }
+
+    span {
+        opacity: 1 !important;
+    }
+}

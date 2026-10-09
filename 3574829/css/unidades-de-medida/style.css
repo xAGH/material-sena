@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.px {
+    font-size: 20px;
+}
+
+/* En este caso, 1rem = 20px ya que el font-size del html es 20px */
+.rem {
+    font-size: 2rem;
+}
+
+.container-em {
+    font-size: 30px;
+}
+
+.em {
+    font-size: 1em;
+}
+
+.container-percent {
+    font-size: 32px;
+}
+
+.percent {
+    font-size: 78%;
+}
+
+.vw {
+    font-size: 20vw;
+}
