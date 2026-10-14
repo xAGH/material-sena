@@ -1,11 +1,14 @@
 import './App.css';
+import { Conditions } from './components/Condintions';
 import { Header } from "./components/Header";
+import { Loops } from './components/Loops';
 
 function App() {
   const tienda = "Café La Montaña";
   const municipio = "Salento";
   const precioLibra = 28000;
   const anioFundacion = 2012;
+  const names = ["Alejo", "Juan", "Pepito", "Sutano"]
 
   return (
     <main className="container">
@@ -17,6 +20,11 @@ function App() {
       <img src="/cafe.png" alt="Café molido" />
       <p>Tostamos en {municipio} desde hace {new Date().getFullYear() - anioFundacion} años.</p>
       <p>Libra de café: {precioLibra.toLocaleString("es-CO", { style: "currency", currency: "COP" })}</p>
+
+      <Loops data={names} />
+
+      <Conditions condition={false} rol="ADMIN" />
+
     </main>
   );
 }
