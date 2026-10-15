@@ -1,0 +1,72 @@
+/* Especificidad 0 */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.square {
+    background-color: red;
+
+    /* Modeladl de caja  */
+    box-sizing: border-box;
+
+    /* Capa "content" */
+    width: 200px;
+    height: 200px;
+    /* max-width: 400px; */
+    /* min-width: 300px; */
+    /* max-height: 400px;
+    min-height: 200px; */
+
+    /* Capa "padding" */
+    padding: 20px;
+
+    /* Capa "border" */
+    border: 40px black dashed;
+    border-top: 10px blue solid;
+    border-radius: 50%;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+
+    /* Capa "margin" */
+    /* margin: 20px; */
+    margin: 0px auto;
+    margin-bottom: 20px;
+
+    /* Desbordamiento "overflow" */
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.square2 {
+    background-color: red;
+
+    /* Modeladl de caja  */
+    box-sizing: border-box;
+
+    /* Capa "content" */
+    width: 200px;
+    height: 200px;
+    /* max-width: 400px; */
+    /* min-width: 300px; */
+    /* max-height: 400px;
+    min-height: 200px; */
+
+    /* Capa "padding" */
+    padding: 20px;
+
+    /* Capa "border" */
+    border: 40px black dashed;
+    border-top: 10px blue solid;
+    border-radius: 50%;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+
+    /* Capa "margin" */
+    /* margin: 20px; */
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+/* 200px - 40px - 60px=100px */
