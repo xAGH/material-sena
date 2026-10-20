@@ -1,5 +1,6 @@
 import "./App.css";
 import hero from "./assets/hero.png";
+import { Header } from "./components/Header";
 
 function App() {
 
@@ -8,15 +9,20 @@ function App() {
   return (
     <>
       { /* Esto es un comentario */}
-      <h1 className="">{shopName}</h1>
-      <p>Hola mundo</p>
+      <Header subtitle="dbaidgsajddkj" shopName={shopName}>
+        <div>
+          <button>Click Me</button>
+        </div>
+      </Header>
 
       <label htmlFor=""></label>
 
       <img src={hero} alt="Imagen hero" />
       <img src="/favicon.svg" alt="Imagen del ícono" />
 
-      <button tabIndex={2}></button>
+      <button tabIndex={2}>Click me</button>
+
+
     </>
   )
 }
