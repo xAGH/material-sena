@@ -1,0 +1,4 @@
+pwd -> Print Working DIrectory = Imprimir el directorio actual
+ls -> Permite listar los archivos de la carpeta actual o de la carpeta especificada.
+cd -> ChangeDirectory = Cambiar de directorio
+mkdir -> Crea una carpeta vacía
