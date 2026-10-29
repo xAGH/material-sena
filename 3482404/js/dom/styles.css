@@ -1,0 +1,28 @@
+.destacado {
+    color: white;
+    background-color: seagreen;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+.tarjeta {
+    padding: 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.tono-descuento {
+    background-color: lightgreen;
+}
+
+.tono-normal {
+    background-color: lightgoldenrodyellow;
+}
