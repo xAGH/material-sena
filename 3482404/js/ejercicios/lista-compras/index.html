@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras con Presupuesto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>🛒 Lista de compras</h1>
+
+        <!-- 1. Presupuesto -->
+        <section class="tarjeta">
+            <h2>Presupuesto</h2>
+            <div class="fila">
+                <input id="input-presupuesto" type="number" min="1" step="1000" placeholder="Ej: 150000">
+                <button id="btn-fijar-presupuesto" class="btn-principal">Fijar presupuesto</button>
+            </div>
+            <span id="span-error-presupuesto" class="error"></span>
+        </section>
+
+        <!-- 2. Agregar productos -->
+        <section class="tarjeta">
+            <h2>Agregar producto</h2>
+            <form id="form-agregar-productos" novalidate>
+                <label for="input-nombre">Nombre</label>
+                <input id="input-nombre" name="nombre" type="text">
+
+                <label for="input-cantidad">Cantidad</label>
+                <input id="input-cantidad" name="cantidad" type="number" min="1">
+
+                <label for="input-precio-unitario">Precio unitario</label>
+                <input id="input-precio-unitario" name="precio-unitario" type="number" min="1">
+
+                <label for="select-categoria">Categoría</label>
+                <select id="select-categoria" name="categoria">
+                    <option value="lacteos">Lácteos</option>
+                    <option value="granos">Granos</option>
+                    <option value="proteinas">Proteínas</option>
+                </select>
+
+                <button class="btn-principal">Agregar</button>
+                <div id="error-formulario-agregar" class="error"></div>
+            </form>
+        </section>
+
+        <!-- 4. Resumen -->
+        <section class="tarjeta">
+            <h2>Resumen</h2>
+            <p class="fila-resumen">
+                <span>Productos: <strong id="resumen-total">0</strong></span>
+                <span>Comprados: <strong id="resumen-comprados">0</strong></span>
+                <span>Pendientes: <strong id="resumen-pendientes">0</strong></span>
+            </p>
+            <p>Progreso: <span id="resumen-porcentaje">0%</span></p>
+            <progress id="barra-progreso" max="100" value="0"></progress>
+            <p>Gastado: <strong id="resumen-gastado">$0</strong> de <strong id="resumen-presupuesto">$0</strong></p>
+            <p>Total estimado: <strong id="resumen-estimado">$0</strong></p>
+            <p id="aviso-presupuesto" class="error aviso" hidden>⚠ Tu lista supera el presupuesto</p>
+        </section>
+
+        <!-- 3. Lista de productos -->
+        <section class="tarjeta">
+            <h2>Lista de productos</h2>
+
+            <div class="fila filtros">
+                <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+                <button class="btn-filtro" data-filtro="pendientes">Pendientes</button>
+                <button class="btn-filtro" data-filtro="comprados">Comprados</button>
+            </div>
+
+            <div id="div-lista-productos"></div>
+            <p id="mensaje-vacio" class="vacio" hidden>Aún no hay productos en tu lista</p>
+
+            <button id="btn-eliminar-comprados" class="btn-peligro">Eliminar comprados</button>
+        </section>
+    </main>
+</body>
+
+</html>
