@@ -1,0 +1,244 @@
+/* =========================================================
+   Variables
+   ========================================================= */
+:root {
+    --color-fondo: #f4f5f7;
+    --color-superficie: #ffffff;
+    --color-texto: #1f2937;
+    --color-texto-suave: #6b7280;
+    --color-borde: #e5e7eb;
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+    --color-exito: #16a34a;
+    --color-exito-fondo: #dcfce7;
+    --color-peligro: #dc2626;
+    --color-peligro-hover: #b91c1c;
+
+    --radio: 0.5rem;
+    --espacio: 1rem;
+    --sombra: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   Base (mobile first: estos estilos aplican a pantallas pequeñas)
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    padding: var(--espacio);
+    max-width: 40rem;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radio);
+    padding: 0.625rem 1rem;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* =========================================================
+   Contadores (estático)
+   ========================================================= */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info span {
+    padding: 0.75rem var(--espacio);
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Punto de color que identifica cada contador */
+.info span::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primario);
+}
+
+#span-completed::before {
+    background-color: var(--color-exito);
+}
+
+#span-pending::before {
+    background-color: var(--color-peligro);
+}
+
+/* =========================================================
+   Formulario para agregar tareas (estático)
+   ========================================================= */
+.info + div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#input-task {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    font: inherit;
+    color: var(--color-texto);
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+#input-task:focus {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 1px;
+    border-color: transparent;
+}
+
+#btn-add-task {
+    width: 100%;
+    color: #ffffff;
+    background-color: var(--color-primario);
+    font-weight: 600;
+}
+
+#btn-add-task:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* =========================================================
+   Lista de tareas (dinámico: los <li> y botones se crean en app.js)
+   ========================================================= */
+#task-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#task-list li {
+    padding: 0.75rem var(--espacio);
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    word-break: break-word;
+
+    /* El texto de la tarea ocupa toda la fila y los botones bajan */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* El texto de la tarea es un nodo de texto (no tiene selector),
+   así que este pseudo-elemento invisible ocupa el 100% del ancho
+   y obliga a los botones a bajar a la siguiente línea en móvil */
+#task-list li::after {
+    content: "";
+    flex-basis: 100%;
+    order: 0;
+}
+
+#task-list button {
+    flex: 1;
+    order: 1;
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+#task-list button[name="btn-complete"] {
+    background-color: var(--color-exito);
+}
+
+#task-list button[name="btn-delete"] {
+    background-color: var(--color-peligro);
+}
+
+#task-list button[name="btn-complete"]:not(:disabled):hover {
+    opacity: 0.85;
+}
+
+#task-list button[name="btn-delete"]:hover {
+    background-color: var(--color-peligro-hover);
+}
+
+/* Estado de tarea completada (clase agregada desde app.js) */
+.completed {
+    text-decoration: line-through;
+    color: var(--color-texto-suave);
+    background-color: var(--color-exito-fondo) !important;
+}
+
+/* =========================================================
+   Tablets y superiores
+   ========================================================= */
+@media (min-width: 640px) {
+    body {
+        padding-block: calc(var(--espacio) * 2);
+    }
+
+    /* Contadores en una fila */
+    .info {
+        flex-direction: row;
+    }
+
+    .info span {
+        flex: 1;
+    }
+
+    /* Input y botón en la misma línea */
+    .info + div {
+        flex-direction: row;
+    }
+
+    #btn-add-task {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    /* Texto a la izquierda, botones a la derecha */
+    #task-list li {
+        flex-wrap: nowrap;
+    }
+
+    #task-list li::after {
+        display: none;
+    }
+
+    #task-list button {
+        flex: 0 0 auto;
+    }
+
+    #task-list button[name="btn-complete"] {
+        margin-left: auto;
+    }
+}
