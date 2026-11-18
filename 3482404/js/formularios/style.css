@@ -1,0 +1,14 @@
+.error {
+    color: #c0392b;
+    font-size: 0.85rem;
+    display: block;
+    min-height: 1.1em;
+}
+
+.input-error {
+    border: 2px solid #c0392b;
+}
+
+.input-valido {
+    border: 2px solid #27ae60;
+}
