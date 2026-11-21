@@ -1,0 +1,4 @@
+<label for="nota">Nota para el pedido</label>
+<input id="nota" [(ngModel)]="nota" (ngModelChange)="onNotaChange($event)" />
+<button (click)="normal()">Quiero el pedido normal</button>
+<p>Nota: {{ nota() }}</p>

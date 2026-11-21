@@ -1,0 +1,11 @@
+<h1>Bienvenido a mi página web</h1>
+
+@if (loggedIn()) {
+<button (click)="logout()">Logout</button>
+<p>Bienvenido Alejo</p>
+} @else {
+<button (click)="login()">Login</button>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam, fugit. Exercitationem ducimus officiis ad
+  inventore consequuntur perspiciatis minus sint aliquid. Vitae id cupiditate temporibus quam quod quas, mollitia ab
+  sed!</p>
+}

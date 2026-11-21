@@ -1,0 +1,11 @@
+<div>
+
+  <div class="row">
+    <button (click)="decrement()">-</button>
+    <span>{{counter()}}</span>
+    <button (click)="increment()">+</button>
+  </div>
+
+  <button [disabled]="disableButton" (click)="reset()">Reset</button>
+
+</div>

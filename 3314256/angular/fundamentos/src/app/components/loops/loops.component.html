@@ -1,0 +1,19 @@
+<label for="filter">Filtrar</label>
+<input type="text" name="filter" [(ngModel)]="search">
+
+@for(person of filtered(); track person.id) {
+<article>
+  <h2>{{ person.name }}</h2>
+  <p>Email: {{ person.email }}</p>
+  <p>Edad: {{ person.age }}</p>
+</article>
+} @empty {
+<h1>NO SE ENCONTRÓ PERSONAS CON ESTE NOMBRE</h1>
+}
+
+<!-- Forma legacy
+<article *ngFor="let person of persons">
+  <h2>Name</h2>
+  <p>Email</p>
+  <p>Age</p>
+</article> -->
